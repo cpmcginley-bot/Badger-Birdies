@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Badger Birdies - Play</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Play - Badger Birdies</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>Badger Birdies</h1>
-      <nav>
-        <img src="badger_golf.png" alt="Badger Birdies Logo" class="logo" />
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="leaderboards.html">Leaderboards</a>
-        <a href="play.html">Play</a>
-        <a href="about.html">About</a>
-        <div class="nav-buttons">
-        <button class="sign-in">Sign In</button>
-        <button class="sign-up">Sign up</button>
-        </div>
-      </nav>
+      <div class="header-inner container">
+        <img
+          src="images/badger_golf.png"
+          alt="Badger Birdies logo"
+          class="logo"
+        />
+        <div class="site-title">Badger Birdies</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="play.html">Play</a>
+          <a href="about.html">About</a>
+          <a href="signin.html" class="auth">Sign In</a>
+          <a href="signup.html" class="auth primary">Sign Up</a>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -60,6 +64,6 @@
       </form>
     </main>
 
-    <footer>© 2025 Badger Birdies | Madison, WI</footer>
+    <footer class="container">© 2025 Badger Birdies | Madison, WI</footer>
   </body>
 </html>

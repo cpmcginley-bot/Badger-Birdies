@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Badger Birdies - Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>Badger Birdies</h1>
-      <nav>
-        <img src="badger_golf.png" alt="Badger Birdies Logo" class="logo" />
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="leaderboards.html">Leaderboards</a>
-        <a href="play.html">Play</a>
-        <a href="about.html">About</a>
-        <div class="nav-buttons">
-        <button class="sign-in">Sign In</button>
-        <button class="sign-up">Sign up</button>
-        </div>
-      </nav>
+      <div class="header-inner container">
+        <img
+          src="images/badger_golf.png"
+          alt="Badger Birdies logo"
+          class="logo"
+        />
+        <div class="site-title">Badger Birdies</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="play.html">Play</a>
+          <a href="about.html">About</a>
+          <a href="signin.html" class="auth">Sign In</a>
+          <a href="signup.html" class="auth primary">Sign Up</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <h2>Cheap & Competitive Golf for UW Students</h2>
-      <p>
-        Welcome to Badger Birdies — a local platform for UW–Madison students to
-        explore golf courses, share scores, and compete with friends.
-      </p>
-
-      <button onclick="location.href='courses.html'">Find Courses</button>
-      <button onclick="location.href='leaderboards.html'">
-        View Leaderboards
-      </button>
-
-      <h2>Featured Courses</h2>
-      <div class="card">
-        <h3>Odana Hills</h3>
-        <p>Madison, WI • Par 72 • Public Course</p>
+    <section class="hero">
+      <img src="images/homebanner.jpg" alt="Golf course banner" />
+      <div class="hero-text container">
+        <h1>Welcome To Badger Birdies</h1>
+        <div class="hero-actions">
+          <a href="signin.html" class="btn primary">Sign In</a>
+          <a href="signup.html" class="btn">Sign Up</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Yahara Hills</h3>
-        <p>Madison, WI • Par 72 • County Course</p>
-      </div>
-      <div class="card">
-        <h3>Glenway Golf Park</h3>
-        <p>Affordable 9-hole option for students and beginners.</p>
+    </section>
+
+    <main class="container">
+      <h2 class="page-title">Featured Courses</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Odana Hills</h3>
+          <p>Madison, WI • Par 72 • Public Course</p>
+        </article>
+
+        <article class="card">
+          <h3>Yahara Hills</h3>
+          <p>Madison, WI • Par 72 • County Course</p>
+        </article>
+
+        <article class="card">
+          <h3>Glenway Golf Park</h3>
+          <p>Affordable 9-hole option for students and beginners.</p>
+        </article>
       </div>
     </main>
 
-    <footer>
-      © 2025 Badger Birdies | Madison, WI |
-      <a href="mailto:badgerbirdies@wisc.edu" style="color: white"
-        >Contact Us</a
-      >
-    </footer>
+    <footer>© 2025 Badger Birdies | Madison, WI</footer>
   </body>
 </html>

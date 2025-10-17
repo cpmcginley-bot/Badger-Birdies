@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up — Badger Birdies</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner container">
+        <img
+          src="images/badger_golf.png"
+          alt="Badger Birdies logo"
+          class="logo"
+        />
+        <div class="site-title">Badger Birdies</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="play.html">Play</a>
+          <a href="about.html">About</a>
+          <a href="signin.html" class="auth">Sign In</a>
+          <a href="signup.html" class="auth primary">Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h2>Create an Account</h2>
+      <p>
+        This sign-up form is static for Milestone 2a; data will be stored later.
+      </p>
+
+      <form class="auth-form" action="#" method="post">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+
+        <label>
+          <input type="checkbox" name="is_admin" /> Sign up as admin (optional)
+        </label>
+
+        <div class="button">
+          <button type="submit">Create account</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="container">© 2025 Badger Birdies | Madison, WI</footer>
+  </body>
+</html>

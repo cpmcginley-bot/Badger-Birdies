@@ -1,95 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Badger Birdies - Leaderboards</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leaderboards - Badger Birdies</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>Badger Birdies</h1>
-      <nav>
-        <img src="badger_golf.png" alt="Badger Birdies Logo" class="logo" />
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="leaderboards.html">Leaderboards</a>
-        <a href="play.html">Play</a>
-        <a href="about.html">About</a>
-        <div class="nav-buttons">
-        <button class="sign-in">Sign In</button>
-        <button class="sign-up">Sign up</button>
-        </div>
-      </nav>
+      <div class="header-inner container">
+        <img
+          src="images/badger_golf.png"
+          alt="Badger Birdies logo"
+          class="logo"
+        />
+        <div class="site-title">Badger Birdies</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="play.html">Play</a>
+          <a href="about.html">About</a>
+          <a href="signin.html" class="auth">Sign In</a>
+          <a href="signup.html" class="auth primary">Sign Up</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <h2>UW Student Leaderboards</h2>
-      <p>Top golfers based on recent student submissions.</p>
+    <main class="container page-with-banners">
+      <aside class="banner">
+        <img src="images/banner1.png" alt="left banner" />
+      </aside>
 
-      <table class="table">
-        <tr>
-          <th>Rank</th>
-          <th>Player</th>
-          <th>Course</th>
-          <th>Score</th>
-          <th>Birdies</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Jason R</td>
-          <td>Odana Hills</td>
-          <td>68</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Collin M</td>
-          <td>Yahara Hills</td>
-          <td>70</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Sam K</td>
-          <td>Glenway</td>
-          <td>72</td>
-          <td>3</td>
-        </tr>
-      </table>
+      <section class="leaderboard-panel">
+        <h1>Leaderboards</h1>
+        <p>Top golfers based on recent student submissions.</p>
 
-  <form class="score-form">
-  <h2>Submit Your Scores!</h2>
-  <label for="username"> Username </label>
-  <input type="text" id="username" name="username" required>
+        <div class="leaderboard-count">Current entries: 5 (top 10 slots)</div>
 
-<!-- course dropdown -->
-  <label for="course"> Course </label>
-  <select id="course" name="course" required>
-    <option value="">--Select a Course--</option>
-    <option value="Odana Hills">Odana Hills</option>
-    <option value="Yahara Hills East">Yahara Hills East</option>
-    <option value="Yahara Hills West">Yahara Hills West</option>
-    <option value="Glenway Golf Park">Glenway Golf Park</option>
-    <option value="Monona GC">Monona GC</option>
-  </select>
+        <table class="leaderboard" aria-label="leaderboard table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Course</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Player A</td>
+              <td>Odana Hills</td>
+              <td>-6</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Player B</td>
+              <td>Yahara Hills</td>
+              <td>-4</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Player C</td>
+              <td>Glenway Golf Park</td>
+              <td>-3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Player D</td>
+              <td>Course 4</td>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Player E</td>
+              <td>Course 5</td>
+              <td>+2</td>
+            </tr>
+          </tbody>
+        </table>
 
-  <!-- score -->
-   <label for="score">Score</label>
-  <input type="number" id="score" name="score" required min="1">
+        <div class="submit-box">
+          <h2>Submit Your Score</h2>
+          <form class="score-form">
+            <label>Player <input type="text" name="player" /></label>
+            <label>Course <input type="text" name="course" /></label>
+            <label>Score <input type="number" name="score" /></label>
+            <div class="score-buttons">
+              <button class="btn" type="submit">Submit</button>
+              <button class="btn" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-  <!-- birdies -->
-   <label for="birdies">Birdies</label>
-  <input type="number" id="birdies" name="birdies" min="0">
-
-  <!-- buttons -->
-  <div class="button">
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-  </div>
-</form>
+      <aside class="banner">
+        <img src="images/banner2.png" alt="right banner" />
+      </aside>
     </main>
 
-    <footer>© 2025 Badger Birdies | Madison, WI</footer>
+    <footer class="container">© 2025 Badger Birdies</footer>
   </body>
 </html>

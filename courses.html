@@ -1,48 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Badger Birdies - Courses</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Courses - Badger Birdies</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1>Badger Birdies</h1>
-      <nav>
-        <img src="badger_golf.png" alt="Badger Birdies Logo" class="logo" />
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="leaderboards.html">Leaderboards</a>
-        <a href="play.html">Play</a>
-        <a href="about.html">About</a>
-        <div class="nav-buttons">
-        <button class="sign-in">Sign In</button>
-        <button class="sign-up">Sign up</button>
-        </div>
-      </nav>
+      <div class="header-inner container">
+        <img src="images/badger_golf.png" alt="Badger Birdies logo" class="logo">
+        <div class="site-title">Badger Birdies</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="play.html">Play</a>
+          <a href="about.html">About</a>
+          <a href="signin.html" class="auth">Sign In</a>
+          <a href="signup.html" class="auth primary">Sign Up</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <h2>Madison-Area Courses</h2>
+    <main class="container">
+      <h1>Courses</h1>
       <p>Explore public and county courses near UW–Madison.</p>
 
-      <div class="card">
-        <h3>Odana Hills Golf Course</h3>
-        <p>18 holes • Par 72 • Approx. $30</p>
-        <p>Student-friendly rates and wide fairways.</p>
-      </div>
+      <section class="courses-grid" aria-label="Course list">
+        <article class="course-card">
+          <img src="images/odanahills.png" alt="Odana Hills" class="thumb">
+          <h2>Odana Hills</h2>
+        </article>
 
-      <div class="card">
-        <h3>Yahara Hills Golf Course</h3>
-        <p>36 holes • Par 72 • Approx. $35</p>
-        <p>Beautiful county course with large greens.</p>
-      </div>
+        <article class="course-card">
+          <img src="images/yaharahills2.jpg" alt="Yahara Hills" class="thumb">
+          <h2>Yahara Hills</h2>
+        </article>
 
-      <div class="card">
-        <h3>Glenway Golf Park</h3>
-        <p>9 holes • Par 33 • Approx. $20</p>
-        <p>Perfect for quick student rounds near downtown.</p>
+        <article class="course-card">
+          <img src="images/golfhole.jpg" alt="Glenway Golf Park" class="thumb">
+          <h2>Glenway Golf Park</h2>
+        </article>
+
+        <article class="course-card"><h2>Course 4</h2></article>
+        <article class="course-card"><h2>Course 5</h2></article>
+        <article class="course-card"><h2>Course 6</h2></article>
+        <article class="course-card"><h2>Course 7</h2></article>
+        <article class="course-card"><h2>Course 8</h2></article>
+        <article class="course-card"><h2>Course 9</h2></article>
+        <article class="course-card"><h2>Course 10</h2></article>
+        <article class="course-card"><h2>Course 11</h2></article>
+        <article class="course-card"><h2>Course 12</h2></article>
+        <article class="course-card"><h2>Course 13</h2></article>
+        <article class="course-card"><h2>Course 14</h2></article>
+        <article class="course-card"><h2>Course 15</h2></article>
+        <article class="course-card"><h2>Course 16</h2></article>
+        <article class="course-card"><h2>Course 17</h2></article>
+        <article class="course-card"><h2>Course 18</h2></article>
+        <article class="course-card"><h2>Course 19</h2></article>
+        <article class="course-card"><h2>Course 20</h2></article>
+      </section>
+    </main>
+
+    <footer class="container">© 2025 Badger Birdies</footer>
+  </body>
+</html>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 11</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 11" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 12</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 12" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 13</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 13" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 14</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 14" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 15</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 15" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 16</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 16" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 17</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 17" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 18</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 18" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 19</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 19" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
+
+        <article class="course-card">
+          <h3>Course 20</h3>
+          <div class="thumbnails">
+            <img src="images/golfhole.jpg" alt="Course 20" class="thumb" />
+          </div>
+          <p class="course-info">Location • Par • Notes</p>
+        </article>
       </div>
     </main>
 
