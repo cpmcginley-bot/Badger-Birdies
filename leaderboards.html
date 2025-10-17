@@ -10,11 +10,16 @@
     <header>
       <h1>Badger Birdies</h1>
       <nav>
+        <img src="badger_golf.png" alt="Badger Birdies Logo" class="logo" />
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="leaderboards.html">Leaderboards</a>
         <a href="play.html">Play</a>
         <a href="about.html">About</a>
+        <div class="nav-buttons">
+        <button class="sign-in">Sign In</button>
+        <button class="sign-up">Sign up</button>
+        </div>
       </nav>
     </header>
 
@@ -22,7 +27,7 @@
       <h2>UW Student Leaderboards</h2>
       <p>Top golfers based on recent student submissions.</p>
 
-      <table border="1" width="100%" cellspacing="0" cellpadding="6">
+      <table class="table">
         <tr>
           <th>Rank</th>
           <th>Player</th>
@@ -52,6 +57,37 @@
           <td>3</td>
         </tr>
       </table>
+
+  <form class="score-form">
+  <h2>Submit Your Scores!</h2>
+  <label for="username"> Username </label>
+  <input type="text" id="username" name="username" required>
+
+<!-- course dropdown -->
+  <label for="course"> Course </label>
+  <select id="course" name="course" required>
+    <option value="">--Select a Course--</option>
+    <option value="Odana Hills">Odana Hills</option>
+    <option value="Yahara Hills East">Yahara Hills East</option>
+    <option value="Yahara Hills West">Yahara Hills West</option>
+    <option value="Glenway Golf Park">Glenway Golf Park</option>
+    <option value="Monona GC">Monona GC</option>
+  </select>
+
+  <!-- score -->
+   <label for="score">Score</label>
+  <input type="number" id="score" name="score" required min="1">
+
+  <!-- birdies -->
+   <label for="birdies">Birdies</label>
+  <input type="number" id="birdies" name="birdies" min="0">
+
+  <!-- buttons -->
+  <div class="button">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
     </main>
 
     <footer>© 2025 Badger Birdies | Madison, WI</footer>
