@@ -1,259 +1,331 @@
+/* =========================
+   Badger Birdies – Basic CSS
+   Simple, class-level selectors only
+   ========================= */
 
-
-/* ---------- GENERAL ---------- */
-.page {
+/* ----- Base ----- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
   font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* A centered content wrapper used across pages */
+.container {
+  max-width: 1000px;
   margin: 0 auto;
-  background-color: white;
-  color: black;
+  padding: 0 16px;
 }
 
-/* Header / Footer */
-.site-header,
-.site-footer {
-  background-color: #c5050c; /* UW Cardinal Red */
-  color: white;
+/* Headings accent color */
+h1,
+h2,
+h3 {
+  color: #c5050c;
+}
+
+/* Links */
+a {
+  color: #c5050c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Header & Nav ----- */
+header {
+  background: #c5050c;
+  color: #fff;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 0;
-  text-align: center;
+  gap: 12px;
 }
-
-/* Logo */
 .logo {
   height: 60px;
   width: auto;
-  display: inline-block;
+  display: block;
 }
-
-/* Navigation */
+.site-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 .nav {
-  text-align: center;
-  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-.nav-link {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+.nav a {
+  color: #fff;
   font-weight: bold;
 }
-.nav-link:hover {
+.nav a:hover {
   text-decoration: underline;
 }
-.nav-buttons {
-  color: white;
-  text-decoration: none;
-  margin-left: 150px;
-  display: inline;
-}
-.sign-in {
-  margin-right: 10px;
-}
 
-/* Page container / main */
-.main {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px 0 15px;
-}
-
-/* Headings */
-.section-title {
-  color: #c5050c;
-  margin: 0 0 8px 0;
-}
-
-/* Tables */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 10px 0;
-}
-.table th,
-.table td {
-  border: 1px solid black;
-  padding: 6px;
-  text-align: center;
-}
-
-/* Buttons */
-.btn {
-  background-color: #c5050c;
-  color: white;
-  border: none;
-  padding: 8px 14px;
+/* Sign-in/Sign-up emphasis */
+.auth.primary {
+  background: #fff;
+  color: #c5050c !important;
+  padding: 6px 10px;
   border-radius: 4px;
-  cursor: pointer;
-  display: inline-block;
+}
+
+/* ----- Hero (home) ----- */
+.hero {
+  position: relative;
   text-align: center;
 }
-.btn:hover {
-  background-color: darkred;
+.hero > img {
+  width: 100%;
+  height: 380px; /* adjust if you want taller/shorter */
+  object-fit: cover;
+  display: block;
 }
-
-/* Footer small text */
-.site-footer {
-  font-size: 1em;
-  margin-top: 40px;
+.hero-text {
+  position: absolute; /* simple overlay center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
-
-/* Reusable card */
-.card {
-  border: 1px solid lightgray;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  background: white;
-}
-
-/* Forms */
-.score-form,
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
-}
-.form-label {
-  font-weight: bold;
-}
-.form-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-/* Hero */
-.hero-sign {
-  background-image: url("images/homebanner.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-.hero-title {
-  margin: 0 0 12px 0;
-  font-size: 36px;
+.hero-text h1 {
+  margin: 0 0 10px;
 }
 .hero-actions {
-  margin-top: 12px;
+  display: inline-flex;
+  gap: 10px;
 }
 
-/* Courses (simple list / stacked cards) */
+/* ----- Buttons (generic) ----- */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid #c5050c;
+  color: #c5050c;
+  background: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #f7e6e6;
+}
+.btn.primary {
+  background: #c5050c;
+  color: #fff;
+  border-color: #c5050c;
+}
+button {
+  cursor: pointer;
+}
+
+/* ----- Cards (home + courses) ----- */
+.cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  padding: 12px;
+  flex: 1 1 280px; /* responsive simple sizing */
+  min-width: 240px;
+}
+
+/* Courses list */
 .courses-grid {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .course-card {
   border: 1px solid #e0e0e0;
-  padding: 12px;
   border-radius: 8px;
   background: #fff;
-  margin-bottom: 12px;
+  padding: 12px;
+  flex: 1 1 300px;
+  min-width: 260px;
 }
-.course-title {
-  margin: 0 0 6px 0;
-  font-size: 18px;
+.course-card h2 {
+  margin: 8px 0;
+}
+.course-details {
+  padding-left: 20px;
 }
 .thumb {
-  display: block;
   width: 100%;
   height: 180px;
   object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 4px;
   background: #f5f5f5;
-}
-
-/* About / image block */
-.about-panel {
-  background: #f0f0f0;
-  padding: 18px;
-}
-.panel-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #f7f7f7;
-  border-radius: 8px;
-  padding: 16px;
-  color: #222;
-}
-.image-block {
-  max-width: 900px;
-  margin: 18px auto;
-  padding: 12px;
-  text-align: center;
-}
-.image-block img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-}
-
-/* Leaderboard / simple table look */
-.leaderboard-panel {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 12px;
-}
-.leaderboard-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 16px;
-}
-.leaderboard-table th {
-  padding: 8px;
-  background-color: #2f9f2f;
-  color: white;
-  font-weight: bold;
-}
-.leaderboard-table td {
-  padding: 8px;
-  border-bottom: 1px solid #e8f2e8;
-}
-
-/* Page-with-banners simplified */
-.page-with-banners {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 12px;
-}
-.side-banner {
-  width: 160px;
-  height: auto;
   display: block;
 }
-.center-content {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 12px;
-}
 
-/* Submit panel */
-.submit-inner {
-  background: #ffffff;
-  border: 1px solid #e6efe6;
-  padding: 18px;
-  border-radius: 8px;
-  max-width: 820px;
-  margin: 18px auto 40px auto;
+/* ----- Leaderboards ----- */
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
 }
-
-/* Small helpers */
-.hidden {
-  display: none;
-}
-.center {
+.leaderboard th,
+.leaderboard td {
+  border: 1px solid #ddd;
+  padding: 8px;
   text-align: center;
 }
+.leaderboard th {
+  background: #eaeaea;
+  color: #000;
+}
 
-.page-play .main, .page-signin .main, .page-signup .main, .page-about .main {
-  margin: 0px 30px 0px 30px;
+/* Side banners layout (kept simple) */
+.page-with-banners {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.page-with-banners .banner img {
+  width: 150px;
+  height: auto;
+  display: block;
+  border: 1px solid #eee;
+}
+.page-with-banners .leaderboard-panel {
+  flex: 1;
+}
+.center-content {
+  /* wrapper inside leaderboards center */
+  display: block; /* plain block to keep it simple */
+}
+
+/* ----- Forms (score + auth) ----- */
+.score-form,
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.auth-form label,
+.score-form label {
+  font-weight: bold;
+}
+.auth-form input,
+.score-form input,
+.score-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* ----- About page article + figure ----- */
+.about-article {
+  padding: 16px 0;
+}
+.about-article .lede {
+  font-size: 1.05rem;
+  margin-top: 0;
+}
+.about-figure {
+  margin: 16px 0;
+  text-align: center;
+}
+.about-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.about-figure figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ----- Footer ----- */
+footer {
+  background: #c5050c;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 24px;
+}
+
+/* ----- Small responsive tweaks ----- */
+@media (max-width: 700px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .site-title {
+    width: 100%;
+    text-align: center;
+  }
+  .nav {
+    justify-content: center;
+  }
+  .hero > img {
+    height: 280px;
+  }
+  .page-with-banners {
+    flex-direction: column;
+  }
+  .page-with-banners .banner img {
+    width: 100%;
+  }
+}
+/* --- Play page: simple, clean layout --- */
+.subhero {
+  background: #f7f7f7;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.play-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+}
+
+.play-layout .card {
+  flex: 1;
+}
+
+.players ul,
+.players ol {
+  padding-left: 20px;
+  text-align: left;
+}
+.players li {
+  margin-bottom: 6px;
+}
+
+/* Stack on small screens */
+@media (max-width: 700px) {
+  .play-layout {
+    flex-direction: column;
+  }
 }
