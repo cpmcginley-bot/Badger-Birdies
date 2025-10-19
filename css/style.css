@@ -319,13 +319,13 @@ main {
   padding: 24px 16px;
 }
 .about-article header h1 {
-  color: #c5050c; /* Badger red */
+  color: white;
   margin: 0 0 8px 0;
 }
 .about-article .lede {
   margin: 6px 0 18px 0;
   font-style: normal;
-  color: #333;
+  color: white;
 }
 .about-article h2 {
   margin-top: 18px;
@@ -351,10 +351,21 @@ main {
   margin-top: 6px;
   color: #555;
 }
+.home-about {
+  margin-top: 24px;
+  background: gainsboro;
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+}
+.home-about p {
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
 
 /* Footer */
 footer {
-  background: #f2f2f2;
+  background: gainsboro;
   padding: 12px 0;
   text-align: center;
   color: #333;
