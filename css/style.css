@@ -245,16 +245,6 @@ main {
 .table-area {
   flex: 3 1 0%; /* larger share - make leaderboard area dominate */
 }
-.form-area {
-  /* make the form column smaller and more fixed so the table gets more space */
-  flex: 0 0 240px; /* fixed-narrow form column */
-}
-
-/* Small variant for submit box */
-.submit-box.small {
-  padding: 8px;
-  max-width: 280px; /* fallback if more specific rule isn't applied */
-}
 
 /* Ensure leaderboard table and form align nicely */
 .leaderboard {
@@ -267,27 +257,13 @@ main {
   padding: 12px; /* more breathing room */
 }
 
-/* Stronger, more specific rule to keep the submit box small inside the form column */
-.form-area .submit-box.small {
-  max-width: 260px;
-  padding: 8px;
-  margin: 0; /* avoid extra centering margin from .submit-box */
-}
-
-@media (max-width: 900px) {
-  .page-with-banners {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Submit box separate */
+/* Submit box */
 .submit-box {
   background: #f7f7f7;
   border: 1px solid #e6efe6;
-  padding: 14px;
+  padding: 20px;
   border-radius: 8px;
-  max-width: 920px;
+  max-width: 1000px;
   margin: 18px auto 0 auto;
 }
 .score-form label {
@@ -297,8 +273,8 @@ main {
 }
 .score-form input,
 .score-form select {
-  width: 100%;
-  padding: 8px;
+  width: 90%;
+  padding: 10px;
   margin-top: 6px;
   border-radius: 6px;
   border: 1px solid #cfded0;
@@ -310,6 +286,9 @@ main {
 }
 .score-buttons .btn {
   flex: 1;
+}
+#play-card-bg {
+  background-color: gainsboro;
 }
 
 /* About image block */
@@ -336,80 +315,79 @@ main {
   line-height: 1.6;
   margin-bottom: 12px;
 }
-.about-figure {
-  text-align: center;
-  margin-top: 18px;
-}
-.about-figure img {
-  max-width: 720px;
-  width: 100%;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-.about-figure figcaption {
-  margin-top: 6px;
-  color: #555;
-}
+
+/* home page */
 .home-about {
   margin-top: 24px;
-  background: gainsboro;
+  background: #c5050c;
   text-align: center;
   padding: 30px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid whitesmoke;
+  color: whitesmoke;
+  
 }
 .home-about p {
   max-width: 700px;
   margin: 0 auto 16px;
 }
 
-/* Footer */
-footer {
+
+/* Sign In Form */
+.sign-in-form {
+  background-color: gainsboro;
+  width: 320px;
+  margin: 40px auto;
+  padding: 20px;
+  border: black 1px solid;
+  border-radius: 6px;
+}
+
+.sign-in-form label,
+.sign-in-form input,
+.sign-in-form .button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.sign-in-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.sign-in-form .button button {
+  display: inline-block;
+  width: auto;
+  padding: 8px 12px;
+}
+/* === Footer === */
+.site-footer {
   background: gainsboro;
-  padding: 12px 0;
-  text-align: center;
   color: #333;
-  margin-top: 24px;
+  text-align: center;
+  padding: 24px 10px;
+  font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .hero img {
-    height: 320px;
-  }
-  .card {
-    width: calc(50% - 20px);
-  }
-  /* two columns at medium-small screens */
-  .course-card {
-    width: calc(50% - 20px);
-    min-height: 280px;
-  }
+.site-footer h3 {
+  margin: 0 0 8px;
+  font-weight: bold;
+  color: #222;
 }
 
-/* three columns for mid-large screens */
-@media (max-width: 1100px) {
-  .course-card {
-    width: calc(33.333% - 12px);
-  }
+.site-footer a {
+  color: #333;
+  text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  .hero img {
-    height: 220px;
-  }
-  .card {
-    width: 100%;
-  }
-  .nav {
-    flex-wrap: wrap;
-  }
-  .submit-box {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-  .course-card {
-    width: 100%;
-    min-height: 260px;
-  }
+.footer-legal {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #555;
 }
+
+#play-footer-margin {
+  margin-bottom: 30px;
+}
+

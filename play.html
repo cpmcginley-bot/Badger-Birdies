@@ -26,71 +26,69 @@
         </nav>
       </div>
     </header>
+    <main class="container">
+      <h1>Find Players &amp; Matches</h1>
+      <p>Connect with other UW students to set up a round.</p>
 
-    <main>
-      <!-- Sub-hero intro strip -->
-      <section class="subhero">
-        <div class="container">
-          <h1>Find Players & Matches</h1>
-          <p>Connect with other UW students to set up a round.</p>
-        </div>
-      </section>
-
-      <!-- Two simple columns: Players (left) + Form (right) -->
-      <section class="container play-layout">
-        <!-- Players list -->
-        <article class="card players">
+      <div class="cards" id="play-footer-margin">
+        <article class="card">
           <h2>Active Players</h2>
           <ul>
             <li>
-              Jason R – Handicap 8 –
+              Jason R — Handicap 8 —
               <a href="mailto:jason@example.com">Contact</a>
             </li>
             <li>
-              Collin M – Handicap 10 –
+              Collin M — Handicap 10 —
               <a href="mailto:collin@example.com">Contact</a>
             </li>
             <li>
-              Taylor S – Handicap 15 –
+              Taylor S — Handicap 15 —
               <a href="mailto:taylor@example.com">Contact</a>
             </li>
           </ul>
 
-          <h3 style="margin-top: 12px">How It Works</h3>
-          <ol>
-            <li>Find someone with a similar handicap.</li>
-            <li>Email to pick a time/course.</li>
-            <li>Submit your score to the leaderboard.</li>
-          </ol>
+          <h3>How it works</h3>
+          <p>
+            Match up with golfers near your skill level, set a tee time, and
+            post your score to compete on the leaderboard.
+          </p>
         </article>
 
-        <!-- Post your info (reuses the simple form styles) -->
-        <article class="card">
+        <article class="card" id="play-card-bg">
           <h2>Post Your Info</h2>
           <form
             class="score-form"
             action="mailto:badgerbirdies@wisc.edu"
             method="post"
-            enctype="text/plain"
           >
-            <label>Name</label>
-            <input type="text" name="name" />
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" />
 
-            <label>Email</label>
-            <input type="email" name="email" />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
 
-            <label>Handicap</label>
-            <input type="text" name="handicap" />
+            <label for="handicap">Handicap</label>
+            <input id="handicap" name="handicap" type="text" />
 
-            <label>Message</label>
-            <textarea name="message" rows="4"></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
 
             <button type="submit" class="btn primary">Send</button>
           </form>
         </article>
-      </section>
+      </div>
     </main>
 
-    <footer class="container">© 2025 Badger Birdies | Madison, WI</footer>
+    <footer class="site-footer">
+      <div class="container">
+        <strong>The University of Wisconsin Golf Community</strong>
+        <p>Badger Birdies • Madison, Wisconsin 53706</p>
+        <p>
+          <a href="mailto:badgerbirdies@wisc.edu">badgerbirdies@wisc.edu</a>
+        </p>
+        <p class="footer-legal">© 2025 Badger Birdies. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
