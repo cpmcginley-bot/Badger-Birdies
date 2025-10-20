@@ -1,14 +1,10 @@
-/* css/style.css - simplified shared stylesheet for Milestone 2a
-   Follow class constraints: simple selectors, Flexbox only, no vars or grid.
-*/
-/* Reset basics */
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #222;
-  background: #fff;
+  color: black;
+  background: white;
 }
 img {
   max-width: 100%;
@@ -24,7 +20,7 @@ img {
 /* Header */
 header {
   background: #c5050c;
-  color: #fff;
+  color: white;
 }
 .header-inner {
   display: flex;
@@ -43,7 +39,7 @@ header {
   align-items: center;
 }
 .nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 6px 8px;
@@ -54,11 +50,11 @@ header {
   background: transparent;
 }
 .nav a.auth.primary {
-  background: #fff;
+  background: white;
   color: #c5050c;
 }
 
-/* Hero: simple full-width image with centered overlay text */
+/* hero */
 .hero {
   position: relative;
   overflow: hidden;
@@ -94,15 +90,15 @@ header {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 6px;
-  background: #eee;
-  color: #222;
+  background: gainsboro;
+  color: black;
   text-decoration: none;
-  border: 1px solid #ccc;
+  border: 1px solid gainsboro;
 }
 .btn.primary {
   background: #c5050c;
-  color: #fff;
-  border-color: #a00405;
+  color: white;
+  border-color: black;
 }
 
 /* Main layout */
@@ -122,8 +118,8 @@ main {
   justify-content: center;
 }
 .card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: white;
+  border: 1px solid gainsboro;
   padding: 12px;
   border-radius: 6px;
   width: 320px;
@@ -135,11 +131,11 @@ main {
 }
 .card p {
   margin: 6px 0 0 0;
-  color: #444;
+  color: slategrey;
   font-size: 14px;
 }
 
-/* Courses grid (20 cards) */
+/* Courses grid */
 .courses-grid {
   display: flex;
   flex-wrap: wrap;
@@ -147,12 +143,12 @@ main {
   justify-content: space-between;
 }
 .course-card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: white;
+  border: 1px solid gainsboro;
   padding: 14px;
   border-radius: 8px;
-  width: calc(25% - 12px); /* four columns */
-  min-height: 340px; /* allow room for bullets */
+  width: calc(25% - 12px);
+  min-height: 340px;
   box-sizing: border-box;
   text-align: left;
   display: flex;
@@ -165,18 +161,18 @@ main {
 }
 .thumb {
   width: 100%;
-  height: 160px; /* slightly taller */
+  height: 160px;
   object-fit: cover;
   border-radius: 6px;
   display: block;
   margin-bottom: 10px;
 }
 
-/* Details list inside each course card */
+/* Details list inside course card */
 .course-details {
   margin: 8px 0 0 0;
   padding-left: 18px;
-  color: #333;
+  color: black;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -186,15 +182,15 @@ main {
 
 /* Leaderboard table */
 .leaderboard-panel {
-  background: #fff;
-  border: 1px solid #e1efe1;
+  background: white;
+  border: 1px solid lightgrey;
   padding: 12px;
   border-radius: 8px;
 }
 .leaderboard-count {
   text-align: center;
   font-weight: bold;
-  color: #2f6f2f;
+  color: green;
   margin-bottom: 8px;
 }
 .leaderboard,
@@ -206,28 +202,27 @@ main {
 .leaderboard-table thead th {
   text-align: left;
   padding: 10px;
-  background: #2f9f2f;
-  color: #fff;
+  background: green;
+  color: white;
   font-weight: 700;
 }
 .leaderboard tbody td,
 .leaderboard-table tbody td {
   padding: 10px;
-  border-bottom: 1px solid #e8f2e8;
+  border-bottom: 1px solid lightgray;
 }
 
 /* Page layout with side banners (leaderboards) */
 .page-with-banners {
   display: flex;
   align-items: stretch;
-  justify-content: space-between; /* space left banner, center, right banner */
+  justify-content: space-between; 
 }
 .page-with-banners .banner img {
   display: block;
   max-width: 140px;
 }
 
-/* Make banners stick to page edge visually */
 .page-with-banners > .banner:first-child {
   margin-left: 0;
 }
@@ -235,32 +230,30 @@ main {
   margin-right: 0;
 }
 
-/* Center area: table and submit form side-by-side */
 .center-content {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  flex: 1 1 auto; /* allow to grow and fill space between banners */
+  flex: 1 1 auto; 
 }
 .table-area {
-  flex: 3 1 0%; /* larger share - make leaderboard area dominate */
-}
+  flex: 3 1 0%; 
 
-/* Ensure leaderboard table and form align nicely */
+
 .leaderboard {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px; /* slightly larger text for emphasis */
+  font-size: 16px; 
 }
 .leaderboard thead th,
 .leaderboard tbody td {
-  padding: 12px; /* more breathing room */
+  padding: 12px; 
 }
 
 /* Submit box */
 .submit-box {
-  background: #f7f7f7;
-  border: 1px solid #e6efe6;
+  background: white;
+  border: 1px solid lightgrey;
   padding: 20px;
   border-radius: 8px;
   max-width: 1000px;
@@ -277,7 +270,7 @@ main {
   padding: 10px;
   margin-top: 6px;
   border-radius: 6px;
-  border: 1px solid #cfded0;
+  border: 1px solid lightgrey;
 }
 .score-buttons {
   display: flex;
@@ -293,8 +286,8 @@ main {
 
 /* About image block */
 .about-article {
-  background: #fff;
-  color: #222;
+  background: white;
+  color: black;
   padding: 24px 16px;
 }
 .about-article header h1 {
@@ -322,15 +315,13 @@ main {
   background: #c5050c;
   text-align: center;
   padding: 30px 0;
-  border-top: 1px solid whitesmoke;
-  color: whitesmoke;
-  
+  border-top: 1px solid white;
+  color: white;
 }
 .home-about p {
   max-width: 700px;
   margin: 0 auto 16px;
 }
-
 
 /* Sign In Form */
 .sign-in-form {
@@ -364,7 +355,7 @@ main {
 /* === Footer === */
 .site-footer {
   background: gainsboro;
-  color: #333;
+  color: black;
   text-align: center;
   padding: 24px 10px;
   font-size: 0.95rem;
@@ -373,21 +364,20 @@ main {
 .site-footer h3 {
   margin: 0 0 8px;
   font-weight: bold;
-  color: #222;
+  color: black;
 }
 
 .site-footer a {
-  color: #333;
+  color: black;
   text-decoration: underline;
 }
 
 .footer-legal {
   margin-top: 12px;
   font-size: 0.85rem;
-  color: #555;
+  color: grey;
 }
 
 #play-footer-margin {
   margin-bottom: 30px;
 }
-
