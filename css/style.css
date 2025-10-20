@@ -1,3 +1,4 @@
+/* Global */
 html,
 body {
   margin: 0;
@@ -7,17 +8,28 @@ body {
   background: white;
 }
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
-/* Container helper */
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Header */
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Header / Nav */
 header {
   background: #c5050c;
   color: white;
@@ -31,6 +43,9 @@ header {
 .logo {
   height: 48px;
   width: auto;
+}
+.site-title {
+  font-weight: 700;
 }
 .nav {
   margin-left: auto;
@@ -54,7 +69,7 @@ header {
   color: #c5050c;
 }
 
-/* hero */
+/* Hero (full-page or image hero) */
 .hero {
   position: relative;
   overflow: hidden;
@@ -101,16 +116,50 @@ header {
   border-color: black;
 }
 
-/* Main layout */
+/* Main Layout */
 main {
   padding: 24px 0;
+  flex: 1 0 auto;
 }
 .page-title {
   text-align: center;
   margin: 8px 0 18px 0;
 }
 
-/* Cards for courses */
+/* Section Hero (Red Heading Box)*/
+.section-hero {
+  background: #c5050c;
+  color: #fff;
+  padding: 24px 20px;
+  border-radius: 8px;
+  margin: 12px 0 20px 0;
+}
+.section-hero h1,
+.section-hero h2,
+.section-hero p {
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+.section-hero p.lede {
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+/* Home */
+.home-about {
+  margin-top: 24px;
+  background: #c5050c;
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid white;
+  color: white;
+}
+.home-about p {
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+
+/* Courses */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -135,7 +184,6 @@ main {
   font-size: 14px;
 }
 
-/* Courses grid */
 .courses-grid {
   display: flex;
   flex-wrap: wrap;
@@ -167,8 +215,6 @@ main {
   display: block;
   margin-bottom: 10px;
 }
-
-/* Details list inside course card */
 .course-details {
   margin: 8px 0 0 0;
   padding-left: 18px;
@@ -180,18 +226,11 @@ main {
   margin-bottom: 6px;
 }
 
-/* Leaderboard table */
+/* Leaderboards */
 .leaderboard-panel {
-  background: white;
-  border: 1px solid lightgrey;
-  padding: 12px;
-  border-radius: 8px;
-}
-.leaderboard-count {
-  text-align: center;
-  font-weight: bold;
-  color: green;
-  margin-bottom: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 .leaderboard,
 .leaderboard-table {
@@ -202,55 +241,65 @@ main {
 .leaderboard-table thead th {
   text-align: left;
   padding: 10px;
-  background: green;
+  background: #2f9f2f;
   color: white;
   font-weight: 700;
 }
 .leaderboard tbody td,
 .leaderboard-table tbody td {
   padding: 10px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #e8f2e8;
 }
-
-/* Page layout with side banners (leaderboards) */
+.leader-table {
+  flex: 3 1 0%;
+}
+.leader-table .table-area {
+  background: #fff;
+  border: 1px solid #e1efe1;
+  padding: 12px;
+  border-radius: 8px;
+}
+.submit-section {
+  flex: 0 0 280px;
+}
+.submit-section .submit-box {
+  background: #fff;
+  border: 1px solid #e6efe6;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0;
+  max-width: 100%;
+}
 .page-with-banners {
   display: flex;
   align-items: stretch;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .page-with-banners .banner img {
   display: block;
   max-width: 140px;
-}
-
-.page-with-banners > .banner:first-child {
-  margin-left: 0;
-}
-.page-with-banners > .banner:last-child {
-  margin-right: 0;
+  padding: 0 5rem;
 }
 
 .center-content {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  flex: 1 1 auto; 
+  flex: 1 1 auto;
 }
 .table-area {
-  flex: 3 1 0%; 
-
-
+  flex: 3 1 0%;
+}
 .leaderboard {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px; 
+  font-size: 16px;
 }
 .leaderboard thead th,
 .leaderboard tbody td {
-  padding: 12px; 
+  padding: 12px;
 }
 
-/* Submit box */
 .submit-box {
   background: white;
   border: 1px solid lightgrey;
@@ -259,13 +308,63 @@ main {
   max-width: 1000px;
   margin: 18px auto 0 auto;
 }
+
+/* Play*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.card {
+  background: white;
+  border: 1px solid gainsboro;
+  padding: 12px;
+  border-radius: 6px;
+}
+#play-card-bg {
+  background-color: gainsboro;
+}
+
+/* About */
+.about-article {
+  background: white;
+  color: black;
+  padding: 24px 16px;
+}
+.about-article h2 {
+  margin-top: 18px;
+  color: #0b2b3a;
+}
+.about-article p,
+.about-article ul {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.about-figure {
+  text-align: center;
+  margin-top: 18px;
+}
+.about-figure img {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.about-figure figcaption {
+  margin-top: 6px;
+  color: #555;
+}
+
+/* Forms*/
 .score-form label {
   display: block;
   margin-top: 8px;
   font-weight: bold;
 }
 .score-form input,
-.score-form select {
+.score-form select,
+.score-form textarea {
   width: 90%;
   padding: 10px;
   margin-top: 6px;
@@ -280,50 +379,7 @@ main {
 .score-buttons .btn {
   flex: 1;
 }
-#play-card-bg {
-  background-color: gainsboro;
-}
 
-/* About image block */
-.about-article {
-  background: white;
-  color: black;
-  padding: 24px 16px;
-}
-.about-article header h1 {
-  color: white;
-  margin: 0 0 8px 0;
-}
-.about-article .lede {
-  margin: 6px 0 18px 0;
-  font-style: normal;
-  color: white;
-}
-.about-article h2 {
-  margin-top: 18px;
-  color: #0b2b3a;
-}
-.about-article p,
-.about-article ul {
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-/* home page */
-.home-about {
-  margin-top: 24px;
-  background: #c5050c;
-  text-align: center;
-  padding: 30px 0;
-  border-top: 1px solid white;
-  color: white;
-}
-.home-about p {
-  max-width: 700px;
-  margin: 0 auto 16px;
-}
-
-/* Sign In Form */
 .sign-in-form {
   background-color: gainsboro;
   width: 320px;
@@ -332,7 +388,6 @@ main {
   border: black 1px solid;
   border-radius: 6px;
 }
-
 .sign-in-form label,
 .sign-in-form input,
 .sign-in-form .button {
@@ -341,7 +396,6 @@ main {
   margin: 8px 0;
   box-sizing: border-box;
 }
-
 .sign-in-form input {
   padding: 8px;
   border: 1px solid #ccc;
@@ -352,32 +406,23 @@ main {
   width: auto;
   padding: 8px 12px;
 }
-/* === Footer === */
+body.page-signup main.sign-in-form {
+  flex: 1 0 auto;
+  margin: 40px auto;
+  padding: 40px 20px;
+  max-width: 480px;
+  box-sizing: border-box;
+}
+/* Footer */
 .site-footer {
   background: gainsboro;
   color: black;
+  width: 100%;
+  margin-top: auto;
+}
+
+.site-footer .footer-content,
+.site-footer > .container {
+  padding: 12px 0;
   text-align: center;
-  padding: 24px 10px;
-  font-size: 0.95rem;
-}
-
-.site-footer h3 {
-  margin: 0 0 8px;
-  font-weight: bold;
-  color: black;
-}
-
-.site-footer a {
-  color: black;
-  text-decoration: underline;
-}
-
-.footer-legal {
-  margin-top: 12px;
-  font-size: 0.85rem;
-  color: grey;
-}
-
-#play-footer-margin {
-  margin-bottom: 30px;
 }
