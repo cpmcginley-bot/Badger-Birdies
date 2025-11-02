@@ -1,3 +1,37 @@
+/* bulma stuff (badger red) */
+/* Logo size */
+.logo {
+  height: 64px;
+  width: auto;
+}
+
+/* Footer */
+.site-footer {
+  background: #e0e0e0;
+  color: #333;
+  text-align: center;
+  padding: 24px 10px;
+  font-size: 0.95rem;
+}
+.site-footer a {
+  color: #333;
+  text-decoration: underline;
+}
+.site-footer a:hover {
+  color: #c5050c;
+}
+
+/* Badger red (use instead of Bulma's salmon 'is-danger') */
+.is-badger-red {
+  background-color: #c5050c !important; /* or #e00707 for brighter */
+  border-color: #c5050c !important;
+  color: #fff !important;
+}
+.is-badger-red:hover {
+  background-color: #a00409 !important;
+  border-color: #a00409 !important;
+}
+
 /* Global */
 html,
 body {

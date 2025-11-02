@@ -4,28 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Courses - Badger Birdies</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="header-inner container">
-        <img
-          src="images/badger_golf.png"
-          alt="Badger Birdies logo"
-          class="logo"
-        />
-        <div class="site-title">Badger Birdies</div>
-        <nav class="nav">
-          <a href="index.html">Home</a>
-          <a href="courses.html">Courses</a>
-          <a href="leaderboards.html">Leaderboards</a>
-          <a href="play.html">Play</a>
-          <a href="about.html">About</a>
-          <a href="signin.html" class="auth">Sign In</a>
-          <a href="signup.html" class="auth primary">Sign Up</a>
-        </nav>
+    <nav
+      class="navbar is-badger-red"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <!-- Logo + Name -->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img
+              src="images/badger_golf.png"
+              alt="Badger Birdies logo"
+              style="height: 48px; width: auto"
+            />
+            <span class="has-text-weight-bold has-text-white ml-2"
+              >Badger Birdies</span
+            >
+          </a>
+
+          <!-- Burger (for mobile view) -->
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item has-text-white" href="index.html">Home</a>
+            <a class="navbar-item has-text-white" href="courses.html"
+              >Courses</a
+            >
+            <a class="navbar-item has-text-white" href="leaderboards.html"
+              >Leaderboards</a
+            >
+            <a class="navbar-item has-text-white" href="play.html">Play</a>
+            <a class="navbar-item has-text-white" href="about.html">About</a>
+          </div>
+
+          <div class="navbar-end">
+            <a class="navbar-item has-text-white" href="signin.html">Sign In</a>
+            <div class="navbar-item">
+              <a class="button is-light" href="signup.html">Sign Up</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </nav>
 
     <main class="container">
       <div class="section-hero">
