@@ -10,14 +10,13 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="page-signup">
+  <body>
     <nav
       class="navbar is-badger-red"
       role="navigation"
       aria-label="main navigation"
     >
       <div class="container">
-        <!-- Logo + Name -->
         <div class="navbar-brand">
           <a class="navbar-item" href="index.html">
             <img
@@ -29,8 +28,6 @@
               >Badger Birdies</span
             >
           </a>
-
-          <!-- Burger (for mobile view) -->
           <a
             role="button"
             class="navbar-burger"
@@ -44,7 +41,6 @@
           </a>
         </div>
 
-        <!-- Navigation Links -->
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item has-text-white" href="index.html">Home</a>
@@ -68,39 +64,92 @@
       </div>
     </nav>
 
-    <main class="sign-in-form">
-      <h2>Create an Account</h2>
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-10-tablet is-5-desktop">
+              <div class="box">
+                <h2 class="title is-4">Create an Account</h2>
+                <form action="#" method="post" class="form-white">
+                  <div class="field">
+                    <label class="label has-text-black" for="name"
+                      >Full Name</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input"
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
 
-      <form class="auth-form" action="#" method="post">
-        <label for="name">Full name</label>
-        <input id="name" name="name" type="text" required />
+                  <div class="field">
+                    <label class="label has-text-black" for="signup-email"
+                      >Email</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input"
+                        id="signup-email"
+                        name="email"
+                        type="email"
+                        required
+                      />
+                    </div>
+                  </div>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+                  <div class="field">
+                    <label class="label has-text-black" for="signup-password"
+                      >Password</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input"
+                        id="signup-password"
+                        name="password"
+                        type="password"
+                        required
+                      />
+                    </div>
+                  </div>
 
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" required />
-
-        <div class="button">
-          <button type="submit">Create account</button>
+                  <div class="field">
+                    <div class="control">
+                      <button
+                        type="submit"
+                        class="button is-badger-red is-fullwidth"
+                      >
+                        Create Account
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-content container">
-        <h3>The University of Wisconsin Golf Community</h3>
+      <div class="content has-text-centered footer-links">
+        <h3 class="title is-5 has-text-black">
+          The University of Wisconsin Golf Community
+        </h3>
         <p>Badger Birdies • Madison, Wisconsin 53706</p>
         <p>
-          <a href="mailto:badgerbirdies@wisc.edu">badgerbirdies@wisc.edu</a
-          ><br />
+          <a href="mailto:badgerbirdies@wisc.edu">badgerbirdies@wisc.edu</a>
+          <br />
           Phone: (608) 000-0000
         </p>
-
-        <p class="footer-legal">
-          © 2025 Badger Birdies. All rights reserved. |
-        </p>
+        <p>© 2025 Badger Birdies. All rights reserved.</p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
