@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// SIGN IN MODAL NAVBAR BUTTON
+// SIGN IN/SIGN UP MODAL NAVBAR BUTTONS
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
   function openModal($el) {

@@ -56,9 +56,8 @@
 
           <div class="navbar-end">
             <button class="navbar-item js-modal-trigger has-text-white" data-target="sign-in-modal"> Sign In </button>
-            <div class="navbar-item">
-              <a class="button is-light" href="signup.html">Sign Up</a>
-            </div>
+            <button class="navbar-item js-modal-trigger has-background-grey has-text-white" data-target="sign-up-modal"> Sign Up
+            </button>
           </div>
         </div>
       </div>
@@ -71,10 +70,10 @@
       >
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title is-1 has-text-whi">Welcome To Badger Birdies</h1>
+            <h1 class="title is-1 has-text-white">Welcome To Badger Birdies</h1>
             <div class="buttons is-centered mt-4">
               <button class="button js-modal-trigger has-text-white is-badger-red" data-target="sign-in-modal"> Sign In </button>
-              <a href="signup.html" class="button is-light">Sign Up</a>
+              <button class="button js-modal-trigger has-text-white has-background-grey" data-target="sign-up-modal"> Sign Up </button>
             </div>
           </div>
         </div>
@@ -177,7 +176,7 @@
       <div class="modal-background"></div>
       <div class="modal-content">
       <!-- Any other Bulma elements you want -->
-       <div class="box"> 
+       <div class="box p-3"> 
           <div class="columns is-centered">
             <div class="column is-10-tablet is-5-desktop">
               <div class="box has-background-light">
@@ -234,6 +233,81 @@
       </div>
       </section>
 
+      <!-- sign-up modal -->
+    <div id="sign-up-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box p-3">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-10-tablet is-5-desktop">
+              <div class="box has-background-light">
+                <h2 class="title is-4 has-text-black">Create an Account</h2>
+                <form action="#" method="post">
+                  <div class="field">
+                    <label class="label has-text-black" for="name"
+                      >Full Name</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input has-background-white has-text-black"
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label has-text-black" for="signup-email"
+                      >Email</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input has-background-white has-text-black"
+                        id="signup-email"
+                        name="email"
+                        type="email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label has-text-black" for="signup-password"
+                      >Password</label
+                    >
+                    <div class="control">
+                      <input
+                        class="input has-background-white has-text-black"
+                        id="signup-password"
+                        name="password"
+                        type="password"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <button
+                        type="submit"
+                        class="button is-badger-red is-fullwidth"
+                      >
+                        Create Account
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
     
     </main>
 
@@ -251,9 +325,6 @@
         <p>© 2025 Badger Birdies. All rights reserved.</p>
       </div>
     </footer>
-    <button class="js-modal-trigger" data-target="modal-js-example">
-  Open JS example modal
-    </button>
     <script src="js/main.js"></script>
 
   </body>
