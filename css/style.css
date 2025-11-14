@@ -1,3 +1,7 @@
+[hidden] {
+  display: none !important;
+}
+
 .is-badger-red {
   background-color: #c5050c;
   border-color: #c5050c;

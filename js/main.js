@@ -1,58 +1,95 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
+document.addEventListener("DOMContentLoaded", () => {
+  const burgers = Array.from(document.querySelectorAll(".navbar-burger"));
 
   burgers.forEach((burger) => {
-    burger.addEventListener('click', () => {
+    burger.addEventListener("click", () => {
       const target = document.getElementById(burger.dataset.target);
-      burger.classList.toggle('is-active');
+      burger.classList.toggle("is-active");
       if (target) {
-        target.classList.toggle('is-active');
+        target.classList.toggle("is-active");
       }
     });
   });
 });
 
-
 // SIGN IN/SIGN UP MODAL NAVBAR BUTTONS
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Functions to open and close a modal
   function openModal($el) {
-    $el.classList.add('is-active');
+    $el.classList.add("is-active");
   }
 
   function closeModal($el) {
-    $el.classList.remove('is-active');
+    $el.classList.remove("is-active");
   }
 
   function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+    (document.querySelectorAll(".modal") || []).forEach(($modal) => {
       closeModal($modal);
     });
   }
 
   // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+  (document.querySelectorAll(".js-modal-trigger") || []).forEach(($trigger) => {
     const modal = $trigger.dataset.target;
     const $target = document.getElementById(modal);
 
-    $trigger.addEventListener('click', () => {
+    $trigger.addEventListener("click", () => {
       openModal($target);
     });
   });
 
   // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
+  (
+    document.querySelectorAll(
+      ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
+    ) || []
+  ).forEach(($close) => {
+    const $target = $close.closest(".modal");
 
-    $close.addEventListener('click', () => {
+    $close.addEventListener("click", () => {
       closeModal($target);
     });
   });
 
   // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
       closeAllModals();
     }
   });
+});
+
+// function to load pages
+document.addEventListener("DOMContentLoaded", () => {
+  // helper function
+  function r_e(id) {
+    return document.querySelector(`#${id}`);
+  }
+
+  // ids of all hidden page sections
+  const pages = [
+    "index",
+    "courses-page",
+    "leaderboard-page",
+    "play-page",
+    "about-page",
+  ];
+
+  // Function to load selected section into page-content
+  function showPage(pageId) {
+    r_e("page-content").innerHTML = r_e(pageId).innerHTML;
+  }
+
+  // event listeners for navbar buttons
+  r_e("home-btn").addEventListener("click", () => showPage("index"));
+  r_e("courses-btn").addEventListener("click", () => showPage("courses-page"));
+  r_e("leaderboards-btn").addEventListener("click", () =>
+    showPage("leaderboard-page")
+  );
+  r_e("play-btn").addEventListener("click", () => showPage("play-page"));
+  r_e("about-btn").addEventListener("click", () => showPage("about-page"));
+
+  // start on Home
+  showPage("index");
 });

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="has-background-white">
+    <!-- NAV BAR -->
     <nav
       class="navbar is-badger-red"
       role="navigation"
@@ -18,7 +19,7 @@
     >
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="index.html">
+          <a class="navbar-item">
             <img
               src="images/badger_golf.png"
               alt="Badger Birdies logo"
@@ -43,273 +44,973 @@
 
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item has-text-white" href="index.html">Home</a>
-            <a class="navbar-item has-text-white" href="courses.html"
-              >Courses</a
-            >
-            <a class="navbar-item has-text-white" href="leaderboards.html"
-              >Leaderboards</a
-            >
-            <a class="navbar-item has-text-white" href="play.html">Play</a>
-            <a class="navbar-item has-text-white" href="about.html">About</a>
+            <div class="buttons">
+              <button class="navbar-item has-text-white" id="home-btn">
+                Home
+              </button>
+              <button class="navbar-item has-text-white" id="courses-btn">
+                Courses
+              </button>
+              <button class="navbar-item has-text-white" id="leaderboards-btn">
+                Leaderboards
+              </button>
+              <button class="navbar-item has-text-white" id="play-btn">
+                Play
+              </button>
+              <button class="navbar-item has-text-white" id="about-btn">
+                About
+              </button>
+            </div>
           </div>
 
           <div class="navbar-end">
-            <button class="navbar-item js-modal-trigger has-text-white" data-target="sign-in-modal"> Sign In </button>
-            <button class="navbar-item js-modal-trigger has-background-grey has-text-white" data-target="sign-up-modal"> Sign Up
+            <button
+              class="navbar-item js-modal-trigger has-text-white"
+              data-target="sign-in-modal"
+            >
+              Sign In
+            </button>
+            <button
+              class="navbar-item js-modal-trigger has-background-grey has-text-white"
+              data-target="sign-up-modal"
+            >
+              Sign Up
             </button>
           </div>
         </div>
       </div>
     </nav>
+    <!-- END NAV BAR -->
 
-    <main>
-      <section
-        class="hero hero-home is-medium"
-        style="background-image: url('images/homebanner.jpg')"
-      >
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title is-1 has-text-white">Welcome To Badger Birdies</h1>
-            <div class="buttons is-centered mt-4">
-              <button class="button js-modal-trigger has-text-white is-badger-red" data-target="sign-in-modal"> Sign In </button>
-              <button class="button js-modal-trigger has-text-white has-background-grey" data-target="sign-up-modal"> Sign Up </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2 class="title has-text-weight-medium has-text-black">
-            Featured Courses
-          </h2>
-          <div class="columns is-multiline">
-            <div
-              class="column is-full-mobile is-half-tablet is-one-third-desktop"
-            >
-              <div
-                class="card is-fullheight has-background-light has-text-black"
-              >
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="images/universityridge.jpg" alt="URIDGE" />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title is-4 has-text-black">University Ridge</p>
-                  <ul class="mb-0">
-                    <li>Distance from Campus: 8.4 Miles</li>
-                    <li>Par: 72</li>
-                    <li>Yardage: 6888 Yards</li>
-                    <li>Difficulty: Advanced</li>
-                    <li>Price: $$$ (UW Student Discount Available)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="column is-full-mobile is-half-tablet is-one-third-desktop"
-            >
-              <div
-                class="card is-fullheight has-background-light has-text-black"
-              >
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="images/glen-golf-park.jpg" alt="GLEN GOLF" />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title is-4 has-text-black">The Glen Golf Park</p>
-                  <ul class="mb-0">
-                    <li>Distance from Campus: 3.1 Miles</li>
-                    <li>Par: 32 (9 Holes)</li>
-                    <li>Yardage: 2372 Yards</li>
-                    <li>Difficulty: Beginner</li>
-                    <li>Price: $</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="column is-full-mobile is-half-tablet is-one-third-desktop"
-            >
-              <div
-                class="card is-fullheight has-background-light has-text-black"
-              >
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="images/odanahills.png" alt="Odana Hills" />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title is-4 has-text-black">Odana Hills GC</p>
-                  <ul class="mb-0">
-                    <li>Distance from Campus: 4.7 Miles</li>
-                    <li>Par: 72</li>
-                    <li>Yardage: 6690 Yards</li>
-                    <li>Difficulty: Beginner</li>
-                    <li>Price: $</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="box has-text-centered has-background-white">
-          <h2 class="title has-text-black mb-5">Why Badger Birdies?</h2>
-          <p class="subtitle has-text-black">
-            We built Badger Birdies to help UW–Madison students find golf
-            partners, discover local courses, and compete in a fun, affordable
-            way.
-          </p>
-          <a href="about.html" class="button is-badger-red">Learn More</a>
-        </div>
-      </section>
-      <section>
-        <div id="sign-in-modal" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-      <!-- Any other Bulma elements you want -->
-       <div class="box p-3"> 
-          <div class="columns is-centered">
-            <div class="column is-10-tablet is-5-desktop">
-              <div class="box has-background-light">
-                <h2 class="title is-4 has-text-black">Sign In</h2>
-                <form action="#" method="post">
-                  <div class="field">
-                    <label class="label has-text-black" for="email"
-                      >Email</label
-                    >
-                    <div class="control">
-                      <input
-                        class="input has-background-white has-text-black"
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <label class="label has-text-black" for="password"
-                      >Password</label
-                    >
-                    <div class="control">
-                      <input
-                        class="input has-background-white has-text-black"
-                        id="password"
-                        name="password"
-                        type="password"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <div class="control">
-                      <button
-                        type="submit"
-                        class="button is-badger-red is-fullwidth"
+    <main id="page-content"></main>
+    <!-- MODALS -->
+    <section>
+      <div id="sign-in-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box p-3">
+            <div class="columns is-centered">
+              <div class="column is-10-tablet is-5-desktop">
+                <div class="box has-background-light">
+                  <h2 class="title is-4 has-text-black">Sign In</h2>
+                  <form action="#" method="post">
+                    <div class="field">
+                      <label class="label has-text-black" for="email"
+                        >Email</label
                       >
-                        Sign In
-                      </button>
+                      <div class="control">
+                        <input
+                          class="input has-background-white has-text-black"
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                        />
+                      </div>
                     </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
-      </div>
-      </section>
 
-      <!-- sign-up modal -->
-    <div id="sign-up-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="box p-3">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-10-tablet is-5-desktop">
-              <div class="box has-background-light">
-                <h2 class="title is-4 has-text-black">Create an Account</h2>
-                <form action="#" method="post">
-                  <div class="field">
-                    <label class="label has-text-black" for="name"
-                      >Full Name</label
-                    >
-                    <div class="control">
-                      <input
-                        class="input has-background-white has-text-black"
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <label class="label has-text-black" for="signup-email"
-                      >Email</label
-                    >
-                    <div class="control">
-                      <input
-                        class="input has-background-white has-text-black"
-                        id="signup-email"
-                        name="email"
-                        type="email"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <label class="label has-text-black" for="signup-password"
-                      >Password</label
-                    >
-                    <div class="control">
-                      <input
-                        class="input has-background-white has-text-black"
-                        id="signup-password"
-                        name="password"
-                        type="password"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <div class="control">
-                      <button
-                        type="submit"
-                        class="button is-badger-red is-fullwidth"
+                    <div class="field">
+                      <label class="label has-text-black" for="password"
+                        >Password</label
                       >
-                        Create Account
-                      </button>
+                      <div class="control">
+                        <input
+                          class="input has-background-white has-text-black"
+                          id="password"
+                          name="password"
+                          type="password"
+                          required
+                        />
+                      </div>
                     </div>
-                  </div>
-                </form>
+
+                    <div class="field">
+                      <div class="control">
+                        <button
+                          type="submit"
+                          class="button is-badger-red is-fullwidth"
+                        >
+                          Sign In
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-</div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    </section>
 
-    
-    </main>
+    <!-- sign-up modal -->
+    <section>
+      <div id="sign-up-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box p-3">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-10-tablet is-5-desktop">
+                  <div class="box has-background-light">
+                    <h2 class="title is-4 has-text-black">Create an Account</h2>
+                    <form action="#" method="post">
+                      <div class="field">
+                        <label class="label has-text-black" for="name"
+                          >Full Name</label
+                        >
+                        <div class="control">
+                          <input
+                            class="input has-background-white has-text-black"
+                            id="name"
+                            name="name"
+                            type="text"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label has-text-black" for="signup-email"
+                          >Email</label
+                        >
+                        <div class="control">
+                          <input
+                            class="input has-background-white has-text-black"
+                            id="signup-email"
+                            name="email"
+                            type="email"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label
+                          class="label has-text-black"
+                          for="signup-password"
+                          >Password</label
+                        >
+                        <div class="control">
+                          <input
+                            class="input has-background-white has-text-black"
+                            id="signup-password"
+                            name="password"
+                            type="password"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <div class="control">
+                          <button
+                            type="submit"
+                            class="button is-badger-red is-fullwidth"
+                          >
+                            Create Account
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+      </div>
+    </section>
+    <!-- END MODALS -->
+
+    <!-- HIDDEN PAGES -->
+    <section id="spa-pages" hidden aria-hidden="true">
+      <div id="index">
+        <section
+          class="hero hero-home is-medium"
+          style="background-image: url('images/homebanner.jpg')"
+        >
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="title is-1 has-text-white">
+                Welcome To Badger Birdies
+              </h1>
+              <div class="buttons is-centered mt-4">
+                <button
+                  class="button js-modal-trigger has-text-white is-badger-red"
+                  data-target="sign-in-modal"
+                >
+                  Sign In
+                </button>
+                <button
+                  class="button js-modal-trigger has-text-white has-background-grey"
+                  data-target="sign-up-modal"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h2 class="title has-text-weight-medium has-text-black">
+              Featured Courses
+            </h2>
+            <div class="columns is-multiline">
+              <div
+                class="column is-full-mobile is-half-tablet is-one-third-desktop"
+              >
+                <div
+                  class="card is-fullheight has-background-light has-text-black"
+                >
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="images/universityridge.jpg" alt="URIDGE" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4 has-text-black">University Ridge</p>
+                    <ul class="mb-0">
+                      <li>Distance from Campus: 8.4 Miles</li>
+                      <li>Par: 72</li>
+                      <li>Yardage: 6888 Yards</li>
+                      <li>Difficulty: Advanced</li>
+                      <li>Price: $$$ (UW Student Discount Available)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="column is-full-mobile is-half-tablet is-one-third-desktop"
+              >
+                <div
+                  class="card is-fullheight has-background-light has-text-black"
+                >
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="images/glen-golf-park.jpg" alt="GLEN GOLF" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4 has-text-black">The Glen Golf Park</p>
+                    <ul class="mb-0">
+                      <li>Distance from Campus: 3.1 Miles</li>
+                      <li>Par: 32 (9 Holes)</li>
+                      <li>Yardage: 2372 Yards</li>
+                      <li>Difficulty: Beginner</li>
+                      <li>Price: $</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="column is-full-mobile is-half-tablet is-one-third-desktop"
+              >
+                <div
+                  class="card is-fullheight has-background-light has-text-black"
+                >
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="images/odanahills.png" alt="Odana Hills" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4 has-text-black">Odana Hills GC</p>
+                    <ul class="mb-0">
+                      <li>Distance from Campus: 4.7 Miles</li>
+                      <li>Par: 72</li>
+                      <li>Yardage: 6690 Yards</li>
+                      <li>Difficulty: Beginner</li>
+                      <li>Price: $</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="box has-text-centered has-background-white">
+            <h2 class="title has-text-black mb-5">Why Badger Birdies?</h2>
+            <p class="subtitle has-text-black">
+              We built Badger Birdies to help UW–Madison students find golf
+              partners, discover local courses, and compete in a fun, affordable
+              way.
+            </p>
+          </div>
+        </section>
+      </div>
+      <!-- END INDEX -->
+
+      <div id="courses-page">
+        <div class="has-background-white">
+          <section class="hero is-small is-badger-red">
+            <div class="hero-body">
+              <div class="container">
+                <p class="title has-text-white">Courses</p>
+                <p class="subtitle has-text-white">
+                  Explore public and county courses near UW-Madison!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container">
+              <div class="columns is-multiline">
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="images/odanahills.png" alt="Odana Hills" />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Odana Hills</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 4.7 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6690 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/yaharahills2.jpg"
+                          alt="Yahara Hills East"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Yahara Hills East</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 8.8 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6983 Yards</li>
+                        <li>Difficulty: Intermediate</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/yahara-west.jpg"
+                          alt="Yahara Hills West"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Yahara Hills West</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 8.8 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6885 Yards</li>
+                        <li>Difficulty: Intermediate</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/glen-golf-park.jpg"
+                          alt="The Glen Golf Park"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">
+                        The Glen Golf Park
+                      </p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 3.1 Miles</li>
+                        <li>Par: 32 (9 Holes)</li>
+                        <li>Yardage: 2372 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/universityridge.jpg"
+                          alt="University Ridge"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">University Ridge</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 8.4 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6888 Yards</li>
+                        <li>Difficulty: Advanced</li>
+                        <li>Price: $$$</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="images/door-creek.jpeg" alt="Door Creek GC" />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Door Creek GC</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 11 Miles</li>
+                        <li>Par: 71 (27 Holes)</li>
+                        <li>Yardage: 6475 Yards</li>
+                        <li>Difficulty: Intermediate</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="images/bridges-gc.jpg" alt="Bridges GC" />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Bridges GC</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 3.4 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6867 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $$</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="images/the-oaks.jpg" alt="The Oaks" />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">The Oaks</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 11 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6736 Yards</li>
+                        <li>Difficulty: Intermediate</li>
+                        <li>Price: $$</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/the-meadows.jpg"
+                          alt="The Meadows of Six Mile Creek"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">The Meadows</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 13 Miles</li>
+                        <li>Par: 72</li>
+                        <li>Yardage: 6919 Yards</li>
+                        <li>Difficulty: Intermediate</li>
+                        <li>Price: $$</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/pleasant-view.jpg"
+                          alt="Pleasant View GC"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Pleasant View GC</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 7.2 Miles</li>
+                        <li>Par: 71 (27 Holes)</li>
+                        <li>Yardage: 6465 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="images/monona-gc.jpg" alt="Monona GC" />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Monona GC</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 3.6 Miles</li>
+                        <li>Par: 36 (9 Holes)</li>
+                        <li>Yardage: 3183 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="column is-full-mobile is-half-tablet is-one-quarter-desktop"
+                >
+                  <div class="card has-background-light">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="images/harvesthills.webp"
+                          alt="Harvest Hill GC"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content has-text-black">
+                      <p class="title is-5 has-text-black">Harvest Hill GC</p>
+                      <ul class="mb-0">
+                        <li>Distance from Campus: 17 Miles</li>
+                        <li>Par: 27 (9 Hole Par 3 Only)</li>
+                        <li>Yardage: 1450 Yards</li>
+                        <li>Difficulty: Beginner</li>
+                        <li>Price: $</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- END COURSES PAGE -->
+      <div id="leaderboard-page">
+        <div>
+          <section class="hero is-small is-badger-red">
+            <div class="hero-body">
+              <div class="container">
+                <p class="title">Leaderboards</p>
+                <p class="subtitle has-text-white">
+                  Top golfers based on recent student submissions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section has-background-white">
+            <div class="container">
+              <div class="columns is-variable is-6">
+                <div class="column is-narrow is-hidden-touch">
+                  <figure class="image" style="max-width: 140px">
+                    <img src="images/banner1.png" alt="left banner" />
+                  </figure>
+                </div>
+
+                <div class="column">
+                  <div class="columns is-variable is-6 is-multiline">
+                    <div class="column is-two-thirds">
+                      <div class="box has-background-light">
+                        <table
+                          class="table is-fullwidth is-leaderboard has-background-light"
+                        >
+                          <thead>
+                            <tr>
+                              <th class="has-text-black">Rank</th>
+                              <th class="has-text-black">Player</th>
+                              <th class="has-text-black">Course</th>
+                              <th class="has-text-black">Score</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="has-text-black">1</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">2</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">3</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">4</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">5</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">6</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">7</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">8</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">9</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="has-text-black">10</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="column is-one-third">
+                      <div class="box has-background-light">
+                        <h2 class="title is-5 has-text-black">
+                          Submit Your Score
+                        </h2>
+                        <form>
+                          <div class="field">
+                            <label class="label has-text-black" for="player"
+                              >Player</label
+                            >
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                type="text"
+                                id="player"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label has-text-black" for="course"
+                              >Course</label
+                            >
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                type="text"
+                                id="course"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label has-text-black" for="score"
+                              >Score</label
+                            >
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                id="score"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="buttons">
+                            <button type="submit" class="button is-badger-red">
+                              Submit
+                            </button>
+                            <button type="reset" class="button is-light">
+                              Reset
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column is-narrow is-hidden-touch">
+                  <figure class="image" style="max-width: 140px">
+                    <img src="images/banner2.png" alt="right banner" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- END LEADERBOARDS -->
+      <div id="play-page">
+        <div>
+          <section class="hero is-small is-badger-red">
+            <div class="hero-body">
+              <div class="container">
+                <p class="title has-text-white">Find Players & Matches</p>
+                <p class="subtitle has-text-white">
+                  Connect with other UW students to set up a round!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section has-background-white">
+            <div class="container">
+              <div class="columns is-variable is-6">
+                <div class="column">
+                  <div class="card has-background-light">
+                    <div class="card-content content">
+                      <h2 class="title is-4 has-text-black">Active Players</h2>
+                      <ul class="has-text-black">
+                        <li>
+                          Jason R — Handicap 8 —
+                          <a href="mailto:jason@example.com">Contact</a>
+                        </li>
+                        <li>
+                          Collin M — Handicap 10 —
+                          <a href="mailto:collin@example.com">Contact</a>
+                        </li>
+                        <li>
+                          Adam R — Handicap 15 —
+                          <a href="mailto:taylor@example.com">Contact</a>
+                        </li>
+                      </ul>
+
+                      <h3 class="title is-5 has-text-black">How It Works</h3>
+                      <p class="has-text-black">
+                        Match up with golfers near your skill level, set a tee
+                        time, and post your score to compete on the leaderboard.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="card has-background-light">
+                    <div class="card-content">
+                      <h2 class="title is-4 has-text-black">Post Your Info</h2>
+                      <form
+                        action="mailto:badgerbirdies@wisc.edu"
+                        method="post"
+                      >
+                        <div class="field">
+                          <label class="label has-text-black" for="name"
+                            >Name</label
+                          >
+                          <div class="control">
+                            <input
+                              class="input has-background-white has-text-black"
+                              id="name"
+                              name="name"
+                              type="text"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label has-text-black" for="email"
+                            >Email</label
+                          >
+                          <div class="control">
+                            <input
+                              class="input has-background-white has-text-black"
+                              id="email"
+                              name="email"
+                              type="email"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label has-text-black" for="handicap"
+                            >Handicap</label
+                          >
+                          <div class="control">
+                            <input
+                              class="input has-background-white has-text-black"
+                              id="handicap"
+                              name="handicap"
+                              type="text"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label has-text-black" for="message"
+                            >Message</label
+                          >
+                          <div class="control">
+                            <textarea
+                              class="textarea has-background-white has-text-black"
+                              id="message"
+                              name="message"
+                              rows="4"
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <div class="control">
+                            <button type="submit" class="button is-badger-red">
+                              Send
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- END PLAY PAGE -->
+      <div id="about-page">
+        <div>
+          <section class="hero is-small is-badger-red">
+            <div class="hero-body">
+              <div class="container">
+                <p class="title has-text-white">About Badger Birdies</p>
+                <p class="subtitle has-text-white">
+                  A student-led project to make golf more accessible and social
+                  at UW–Madison.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section has-background-white">
+            <div class="container content has-text-black">
+              <h2 class="has-text-black">Our Story</h2>
+              <p>
+                Badger Birdies was created by two friends and golf enthusiasts —
+                Jason Reetz and Collin McGinley, students at the University of
+                Wisconsin–Madison who share a passion for golf, competition, and
+                community.
+              </p>
+              <p>
+                When we first came to campus, we quickly realized that finding
+                golf partners or even knowing where to play wasn’t as simple as
+                we thought. Madison and Dane County have many beautiful public
+                courses, yet there was no single place for students to connect
+                around golf.
+              </p>
+              <p>So we built Badger Birdies.</p>
+
+              <h2 class="has-text-black">What We Believe</h2>
+              <p>
+                We believe golf at UW–Madison should be accessible, social, and
+                welcoming. Badger Birdies helps students discover courses, meet
+                other golfers, and enjoy friendly competition.
+              </p>
+
+              <h3 class="has-text-black">Our Goals</h3>
+              <ul>
+                <li>Help students find nearby, affordable golf courses.</li>
+                <li>Connect golfers by ability and interest.</li>
+                <li>Provide a simple place to share scores and events.</li>
+              </ul>
+
+              <h2 class="has-text-black">Why It Matters</h2>
+              <p>
+                Golf builds patience, respect, and community. For busy students,
+                it offers a chance to reset and make lasting friendships.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer has-background-light">
       <div class="content has-text-centered footer-links">
@@ -326,6 +1027,5 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
-
   </body>
 </html>
