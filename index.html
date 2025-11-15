@@ -13,13 +13,13 @@
   <body class="has-background-white">
     <!-- NAV BAR -->
     <nav
-      class="navbar is-badger-red"
+      class="navbar is-badger-red has-text-white"
       role="navigation"
       aria-label="main navigation"
     >
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
+          <a class="navbar-item has-text-white" href="index.html">
             <img
               src="images/badger_golf.png"
               alt="Badger Birdies logo"
@@ -31,7 +31,7 @@
           </a>
           <a
             role="button"
-            class="navbar-burger"
+            class="navbar-burger has-text-white"
             aria-label="menu"
             aria-expanded="false"
             data-target="navMenu"
@@ -44,38 +44,41 @@
 
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-start">
-            <div class="buttons">
-              <button class="navbar-item has-text-white" id="home-btn">
-                Home
-              </button>
-              <button class="navbar-item has-text-white" id="courses-btn">
-                Courses
-              </button>
-              <button class="navbar-item has-text-white" id="leaderboards-btn">
-                Leaderboards
-              </button>
-              <button class="navbar-item has-text-white" id="play-btn">
-                Play
-              </button>
-              <button class="navbar-item has-text-white" id="about-btn">
-                About
-              </button>
-            </div>
+            <a class="navbar-item has-text-white" href="#" id="home-btn"
+              >Home</a
+            >
+            <a class="navbar-item has-text-white" href="#" id="courses-btn"
+              >Courses</a
+            >
+            <a
+              class="navbar-item has-text-white"
+              href="#"
+              id="leaderboards-btn"
+              >Leaderboards</a
+            >
+            <a class="navbar-item has-text-white" href="#" id="play-btn"
+              >Play</a
+            >
+            <a class="navbar-item has-text-white" href="#" id="about-btn"
+              >About</a
+            >
           </div>
 
           <div class="navbar-end">
-            <button
+            <a
               class="navbar-item js-modal-trigger has-text-white"
+              href="#"
               data-target="sign-in-modal"
             >
               Sign In
-            </button>
-            <button
+            </a>
+            <a
               class="navbar-item js-modal-trigger has-background-grey has-text-white"
+              href="#"
               data-target="sign-up-modal"
             >
               Sign Up
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -87,59 +90,58 @@
     <section>
       <div id="sign-in-modal" class="modal">
         <div class="modal-background"></div>
-        <div class="modal-content">
-          <!-- Any other Bulma elements you want -->
-          <div class="box p-3">
-            <div class="columns is-centered">
-              <div class="column is-10-tablet is-5-desktop">
-                <div class="box has-background-light">
-                  <h2 class="title is-4 has-text-black">Sign In</h2>
-                  <form action="#" method="post">
-                    <div class="field">
-                      <label class="label has-text-black" for="email"
-                        >Email</label
-                      >
-                      <div class="control">
-                        <input
-                          class="input has-background-white has-text-black"
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label class="label has-text-black" for="password"
-                        >Password</label
-                      >
-                      <div class="control">
-                        <input
-                          class="input has-background-white has-text-black"
-                          id="password"
-                          name="password"
-                          type="password"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <div class="control">
-                        <button
-                          type="submit"
-                          class="button is-badger-red is-fullwidth"
-                        >
-                          Sign In
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+        <div class="modal-card has-background-white has-text-black">
+          <header class="modal-card-head has-background-white has-text-black">
+            <p class="modal-card-title has-text-black">Sign In</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body has-background-white has-text-black">
+            <form action="#" method="post">
+              <div class="field">
+                <label class="label has-text-black" for="email">Email</label>
+                <div class="control">
+                  <input
+                    class="input has-background-white has-text-black"
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                  />
                 </div>
               </div>
-            </div>
-          </div>
+
+              <div class="field">
+                <label class="label has-text-black" for="password"
+                  >Password</label
+                >
+                <div class="control">
+                  <input
+                    class="input has-background-white has-text-black"
+                    id="password"
+                    name="password"
+                    type="password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <button
+                    type="submit"
+                    class="button is-badger-red has-text-white is-fullwidth"
+                  >
+                    Sign In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+          <footer
+            class="modal-card-foot is-justify-content-flex-end has-background-white has-text-black"
+          >
+            <button type="button" class="button modal-close">Cancel</button>
+          </footer>
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
@@ -149,79 +151,75 @@
     <section>
       <div id="sign-up-modal" class="modal">
         <div class="modal-background"></div>
-        <div class="modal-content">
-          <div class="box p-3">
-            <div class="container">
-              <div class="columns is-centered">
-                <div class="column is-10-tablet is-5-desktop">
-                  <div class="box has-background-light">
-                    <h2 class="title is-4 has-text-black">Create an Account</h2>
-                    <form action="#" method="post">
-                      <div class="field">
-                        <label class="label has-text-black" for="name"
-                          >Full Name</label
-                        >
-                        <div class="control">
-                          <input
-                            class="input has-background-white has-text-black"
-                            id="name"
-                            name="name"
-                            type="text"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <label class="label has-text-black" for="signup-email"
-                          >Email</label
-                        >
-                        <div class="control">
-                          <input
-                            class="input has-background-white has-text-black"
-                            id="signup-email"
-                            name="email"
-                            type="email"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <label
-                          class="label has-text-black"
-                          for="signup-password"
-                          >Password</label
-                        >
-                        <div class="control">
-                          <input
-                            class="input has-background-white has-text-black"
-                            id="signup-password"
-                            name="password"
-                            type="password"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="control">
-                          <button
-                            type="submit"
-                            class="button is-badger-red is-fullwidth"
-                          >
-                            Create Account
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+        <div class="modal-card has-background-white has-text-black">
+          <header class="modal-card-head has-background-white has-text-black">
+            <p class="modal-card-title has-text-black">Create an Account</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body has-background-white has-text-black">
+            <form action="#" method="post">
+              <div class="field">
+                <label class="label has-text-black" for="name">Full Name</label>
+                <div class="control">
+                  <input
+                    class="input has-background-white has-text-black"
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                  />
                 </div>
               </div>
-            </div>
-          </div>
-          <button class="modal-close is-large" aria-label="close"></button>
+
+              <div class="field">
+                <label class="label has-text-black" for="signup-email"
+                  >Email</label
+                >
+                <div class="control">
+                  <input
+                    class="input has-background-white has-text-black"
+                    id="signup-email"
+                    name="email"
+                    type="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label has-text-black" for="signup-password"
+                  >Password</label
+                >
+                <div class="control">
+                  <input
+                    class="input has-background-white has-text-black"
+                    id="signup-password"
+                    name="password"
+                    type="password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <button
+                    type="submit"
+                    class="button is-badger-red has-text-white is-fullwidth"
+                  >
+                    Create Account
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+          <footer
+            class="modal-card-foot is-justify-content-flex-end has-background-white has-text-black"
+          >
+            <button type="button" class="button modal-close">Cancel</button>
+          </footer>
         </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
     </section>
     <!-- END MODALS -->
@@ -240,7 +238,7 @@
               </h1>
               <div class="buttons is-centered mt-4">
                 <button
-                  class="button js-modal-trigger has-text-white is-badger-red"
+                  class="button js-modal-trigger is-badger-red has-text-white"
                   data-target="sign-in-modal"
                 >
                   Sign In
@@ -806,7 +804,10 @@
                           </div>
 
                           <div class="buttons">
-                            <button type="submit" class="button is-badger-red">
+                            <button
+                              type="submit"
+                              class="button is-badger-red has-text-white"
+                            >
                               Submit
                             </button>
                             <button type="reset" class="button is-light">
@@ -940,7 +941,10 @@
 
                         <div class="field">
                           <div class="control">
-                            <button type="submit" class="button is-badger-red">
+                            <button
+                              type="submit"
+                              class="button is-badger-red has-text-white"
+                            >
                               Send
                             </button>
                           </div>
