@@ -10,10 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
 
-// SIGN IN/SIGN UP MODAL NAVBAR BUTTONS
-document.addEventListener("DOMContentLoaded", () => {
+  // SIGN IN/SIGN UP MODAL NAVBAR BUTTONS
   // Functions to open and close a modal
   function openModal($el) {
     $el.classList.add("is-active");
@@ -58,10 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAllModals();
     }
   });
-});
 
-// function to load pages
-document.addEventListener("DOMContentLoaded", () => {
+  // function to load pages
   // helper function
   function r_e(id) {
     return document.querySelector(`#${id}`);
@@ -78,7 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to load selected section into page-content
   function showPage(pageId) {
-    r_e("page-content").innerHTML = r_e(pageId).innerHTML;
+    pages.forEach((id) => {
+      const el = r_e(id);
+      if (!el) return;
+
+      if (id === pageId) {
+        el.classList.remove("is-hidden"); // show this one
+      } else {
+        el.classList.add("is-hidden"); // hide others
+      }
+    });
   }
 
   // event listeners for navbar buttons
