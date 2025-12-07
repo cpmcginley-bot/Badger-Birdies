@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="has-background-white">
-    <!-- NAV BAR -->
+    <!-- ================= NAVBAR ================= -->
     <nav
       class="navbar is-badger-red has-text-white"
       role="navigation"
@@ -25,9 +25,9 @@
               alt="Badger Birdies logo"
               style="height: 48px; width: auto"
             />
-            <span class="has-text-weight-bold has-text-white ml-2"
-              >Badger Birdies</span
-            >
+            <span class="has-text-weight-bold has-text-white ml-2">
+              Badger Birdies
+            </span>
           </a>
           <a
             role="button"
@@ -44,46 +44,70 @@
 
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item has-text-white" href="#" id="home-btn"
-              >Home</a
+            <a class="navbar-item has-text-white" href="#" id="home-btn">
+              Home
+            </a>
+            <a class="navbar-item has-text-white" href="#" id="courses-btn">
+              Courses
+            </a>
+            <a
+              class="navbar-item has-text-white"
+              href="#"
+              id="leaderboards-btn"
             >
-            <a class="navbar-item has-text-white" href="#" id="courses-btn"
-              >Courses</a
-            >
-            <a class="navbar-item has-text-white" href="#" id="leaderboards-btn"
-              >Leaderboards</a
-            >
-            <a class="navbar-item has-text-white" href="#" id="play-btn"
-              >Play</a
-            >
-            <a class="navbar-item has-text-white" href="#" id="about-btn"
-              >About</a
-            >
+              Leaderboards
+            </a>
+            <a class="navbar-item has-text-white" href="#" id="play-btn">
+              Play
+            </a>
+            <a class="navbar-item has-text-white" href="#" id="about-btn">
+              About
+            </a>
           </div>
 
           <div class="navbar-end">
-            <a
-              class="navbar-item js-modal-trigger has-text-white"
-              href="#"
-              data-target="sign-in-modal"
-            >
-              Sign In
-            </a>
-            <a
-              class="navbar-item js-modal-trigger has-background-grey has-text-white"
-              href="#"
-              data-target="sign-up-modal"
-            >
-              Sign Up
-            </a>
+            <!-- shown when signed OUT -->
+            <div class="navbar-item signedout">
+              <a
+                class="js-modal-trigger has-text-white"
+                href="#"
+                data-target="sign-in-modal"
+              >
+                Sign In
+              </a>
+            </div>
+            <div class="navbar-item signedout">
+              <a
+                class="js-modal-trigger has-background-grey has-text-white"
+                href="#"
+                data-target="sign-up-modal"
+              >
+                Sign Up
+              </a>
+            </div>
+
+            <!-- shown when signed IN -->
+            <div class="navbar-item signedin is-hidden">
+              <span id="user_email" class="has-text-white"></span>
+            </div>
+            <div class="navbar-item signedin is-hidden">
+              <a href="#" id="signoutbtn" class="has-text-white">Sign Out</a>
+            </div>
           </div>
         </div>
       </div>
     </nav>
     <!-- END NAV BAR -->
-    <!-- MODALS -->
+
+    <!-- =============== MESSAGE BAR ============== -->
+    <div
+      id="message_bar"
+      class="p-3 has-background-warning has-text-black has-text-centered is-hidden"
+    ></div>
+
+    <!-- ================= MODALS ================= -->
     <section>
-      <!-- sign-in modal -->
+      <!-- SIGN IN MODAL -->
       <div id="sign-in-modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card has-background-light has-text-black is-rounded">
@@ -92,13 +116,13 @@
             <button class="delete" aria-label="close"></button>
           </header>
           <section class="modal-card-body has-background-light has-text-black">
-            <form action="#" method="post">
+            <form id="signin_form">
               <div class="field">
-                <label class="label has-text-black" for="email">Email</label>
+                <label class="label has-text-black" for="email_">Email</label>
                 <div class="control">
                   <input
                     class="input has-background-white has-text-black"
-                    id="email"
+                    id="email_"
                     name="email"
                     type="email"
                     required
@@ -107,13 +131,13 @@
               </div>
 
               <div class="field">
-                <label class="label has-text-black" for="password"
-                  >Password</label
-                >
+                <label class="label has-text-black" for="password_">
+                  Password
+                </label>
                 <div class="control">
                   <input
                     class="input has-background-white has-text-black"
-                    id="password"
+                    id="password_"
                     name="password"
                     type="password"
                     required
@@ -137,11 +161,9 @@
             class="modal-card-foot is-justify-content-flex-end has-background-light has-text-black"
           ></footer>
         </div>
-        <!-- end .modal-card -->
       </div>
-      <!-- end #sign-in-modal -->
 
-      <!-- sign-up modal -->
+      <!-- SIGN UP MODAL -->
       <div id="sign-up-modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card has-background-light has-text-black is-rounded">
@@ -150,7 +172,7 @@
             <button class="delete" aria-label="close"></button>
           </header>
           <section class="modal-card-body has-background-light has-text-black">
-            <form action="#" method="post">
+            <form id="signup_form">
               <div class="field">
                 <label class="label has-text-black" for="name">Full Name</label>
                 <div class="control">
@@ -165,13 +187,11 @@
               </div>
 
               <div class="field">
-                <label class="label has-text-black" for="signup-email"
-                  >Email</label
-                >
+                <label class="label has-text-black" for="email">Email</label>
                 <div class="control">
                   <input
                     class="input has-background-white has-text-black"
-                    id="signup-email"
+                    id="email"
                     name="email"
                     type="email"
                     required
@@ -180,13 +200,13 @@
               </div>
 
               <div class="field">
-                <label class="label has-text-black" for="signup-password"
-                  >Password</label
-                >
+                <label class="label has-text-black" for="password">
+                  Password
+                </label>
                 <div class="control">
                   <input
                     class="input has-background-white has-text-black"
-                    id="signup-password"
+                    id="password"
                     name="password"
                     type="password"
                     required
@@ -210,13 +230,12 @@
             class="modal-card-foot is-justify-content-flex-end has-background-light has-text-black"
           ></footer>
         </div>
-        <!-- end .modal-card -->
       </div>
-      <!-- end #sign-up-modal -->
     </section>
-    <!-- END MODALS -->
 
-    <!-- HIDDEN PAGES -->
+    <!-- ================ PAGES =================== -->
+
+    <!-- ============== HOME PAGE ============== -->
     <div id="index" class="is-hidden">
       <section
         class="hero hero-home is-medium"
@@ -324,6 +343,7 @@
     </div>
     <!-- END INDEX -->
 
+    <!-- ============= COURSES PAGE ============ -->
     <div id="courses-page" class="is-hidden">
       <div class="has-background-white">
         <section class="hero is-small is-badger-red">
@@ -630,6 +650,8 @@
       </div>
     </div>
     <!-- END COURSES PAGE -->
+
+    <!-- =========== LEADERBOARD PAGE ========== -->
     <div id="leaderboard-page" class="is-hidden">
       <div>
         <section class="hero is-small is-badger-red">
@@ -646,154 +668,121 @@
         <section class="section has-background-white">
           <div class="container">
             <div class="columns is-variable is-6">
+              <!-- LEFT BANNER -->
               <div class="column is-narrow">
                 <figure class="image" style="max-width: 140px">
                   <img src="images/banner1.png" alt="left banner" />
                 </figure>
               </div>
 
+              <!-- MIDDLE: TABLE + FORM -->
               <div class="column">
-                <div class="columns is-variable is-6 is-multiline">
-                  <div class="column is-two-thirds">
-                    <div class="box has-background-light">
-                      <table
-                        class="table is-fullwidth is-leaderboard has-background-light"
-                      >
-                        <thead>
-                          <tr>
-                            <th class="has-text-black">Rank</th>
-                            <th class="has-text-black">Player</th>
-                            <th class="has-text-black">Course</th>
-                            <th class="has-text-black">Score</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="has-text-black">1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">2</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">3</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">4</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">5</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">6</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">7</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">8</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">9</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td class="has-text-black">10</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
+                <div class="box has-background-light">
+                  <div class="columns is-variable is-6">
+                    <!-- leaderboard table -->
+                    <!-- PLACEHOLDER when signed out -->
+                    <div
+                      id="leaderboard_placeholder"
+                      class="has-text-centered p-5 has-text-black"
+                    >
+                      <p>
+                        <strong class="has-text-black">
+                          Please sign in to view the leaderboard.
+                        </strong>
+                      </p>
                     </div>
-                  </div>
 
-                  <div class="column is-one-third">
-                    <div class="box has-background-light">
-                      <h2 class="title is-5 has-text-black">
-                        Submit Your Score
-                      </h2>
-                      <form>
-                        <div class="field">
-                          <label class="label has-text-black" for="player"
-                            >Player</label
-                          >
-                          <div class="control">
-                            <input
-                              class="input has-background-white has-text-black"
-                              type="text"
-                              id="player"
-                            />
+                    <!-- TABLE (hidden until logged in) -->
+                    <table
+                      id="leaderboard_table"
+                      class="table is-fullwidth is-leaderboard has-background-light is-hidden"
+                    >
+                      <thead>
+                        <tr>
+                          <th class="has-text-black">Rank</th>
+                          <th class="has-text-black">Player</th>
+                          <th class="has-text-black">Course</th>
+                          <th class="has-text-black">Score</th>
+                        </tr>
+                      </thead>
+                      <tbody id="leaderboard_body"></tbody>
+                    </table>
+
+                    <!-- submit score form -->
+                    <div class="column is-one-third">
+                      <div class="box has-background-light">
+                        <h2 class="title is-5 has-text-black">
+                          Submit Your Score
+                        </h2>
+
+                        <form id="submitScoreForm">
+                          <div class="field">
+                            <label
+                              class="label has-text-black"
+                              for="score_player"
+                            >
+                              Player
+                            </label>
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                type="text"
+                                id="score_player"
+                              />
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="field">
-                          <label class="label has-text-black" for="course"
-                            >Course</label
-                          >
-                          <div class="control">
-                            <input
-                              class="input has-background-white has-text-black"
-                              type="text"
-                              id="course"
-                            />
+                          <div class="field">
+                            <label
+                              class="label has-text-black"
+                              for="score_course"
+                            >
+                              Course
+                            </label>
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                type="text"
+                                id="score_course"
+                              />
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="field">
-                          <label class="label has-text-black" for="score"
-                            >Score</label
-                          >
-                          <div class="control">
-                            <input
-                              class="input has-background-white has-text-black"
-                              id="score"
-                            />
+                          <div class="field">
+                            <label
+                              class="label has-text-black"
+                              for="score_value"
+                            >
+                              Score
+                            </label>
+                            <div class="control">
+                              <input
+                                class="input has-background-white has-text-black"
+                                type="number"
+                                id="score_value"
+                              />
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="buttons">
-                          <button
-                            type="submit"
-                            class="button is-badger-red has-text-white"
-                          >
-                            Submit
-                          </button>
-                          <button type="reset" class="button is-light">
-                            Reset
-                          </button>
-                        </div>
-                      </form>
+                          <div class="buttons">
+                            <button
+                              type="submit"
+                              class="button is-badger-red has-text-white"
+                            >
+                              Submit
+                            </button>
+                            <button type="reset" class="button is-light">
+                              Reset
+                            </button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
+              <!-- RIGHT BANNER -->
               <div class="column is-narrow is-hidden-touch">
                 <figure class="image" style="max-width: 140px">
                   <img src="images/banner2.png" alt="right banner" />
@@ -805,6 +794,8 @@
       </div>
     </div>
     <!-- END LEADERBOARDS -->
+
+    <!-- =============== PLAY PAGE ============= -->
     <div id="play-page" class="is-hidden">
       <div>
         <section class="hero is-small is-badger-red">
@@ -825,20 +816,24 @@
                 <div class="card has-background-light">
                   <div class="card-content content">
                     <h2 class="title is-4 has-text-black">Active Players</h2>
-                    <ul class="has-text-black">
-                      <li>
-                        Jason R — Handicap 8 —
-                        <a href="mailto:jason@example.com">Contact</a>
-                      </li>
-                      <li>
-                        Collin M — Handicap 10 —
-                        <a href="mailto:collin@example.com">Contact</a>
-                      </li>
-                      <li>
-                        Adam R — Handicap 15 —
-                        <a href="mailto:taylor@example.com">Contact</a>
-                      </li>
-                    </ul>
+
+                    <!-- PLACEHOLDER when signed out -->
+                    <div
+                      id="players_placeholder"
+                      class="has-text-centered p-5 has-text-grey has-text-black"
+                    >
+                      <p>
+                        <strong class="has-text-black">
+                          Please sign in to view active players.
+                        </strong>
+                      </p>
+                    </div>
+
+                    <!-- LIST (hidden until logged in) -->
+                    <ul
+                      class="has-text-black is-hidden"
+                      id="active_players_list"
+                    ></ul>
 
                     <h3 class="title is-5 has-text-black">How It Works</h3>
                     <p class="has-text-black">
@@ -853,58 +848,55 @@
                 <div class="card has-background-light">
                   <div class="card-content">
                     <h2 class="title is-4 has-text-black">Post Your Info</h2>
-                    <form action="mailto:badgerbirdies@wisc.edu" method="post">
+
+                    <form id="postinfo_form">
                       <div class="field">
-                        <label class="label has-text-black" for="name"
-                          >Name</label
-                        >
+                        <label class="label has-text-black" for="pi_name">
+                          Name
+                        </label>
                         <div class="control">
                           <input
                             class="input has-background-white has-text-black"
-                            id="name"
-                            name="name"
+                            id="pi_name"
                             type="text"
                           />
                         </div>
                       </div>
 
                       <div class="field">
-                        <label class="label has-text-black" for="email"
-                          >Email</label
-                        >
+                        <label class="label has-text-black" for="pi_email">
+                          Email
+                        </label>
                         <div class="control">
                           <input
                             class="input has-background-white has-text-black"
-                            id="email"
-                            name="email"
+                            id="pi_email"
                             type="email"
                           />
                         </div>
                       </div>
 
                       <div class="field">
-                        <label class="label has-text-black" for="handicap"
-                          >Handicap</label
-                        >
+                        <label class="label has-text-black" for="pi_handicap">
+                          Handicap
+                        </label>
                         <div class="control">
                           <input
                             class="input has-background-white has-text-black"
-                            id="handicap"
-                            name="handicap"
+                            id="pi_handicap"
                             type="text"
                           />
                         </div>
                       </div>
 
                       <div class="field">
-                        <label class="label has-text-black" for="message"
-                          >Message</label
-                        >
+                        <label class="label has-text-black" for="pi_message">
+                          Message
+                        </label>
                         <div class="control">
                           <textarea
                             class="textarea has-background-white has-text-black"
-                            id="message"
-                            name="message"
+                            id="pi_message"
                             rows="4"
                           ></textarea>
                         </div>
@@ -930,6 +922,8 @@
       </div>
     </div>
     <!-- END PLAY PAGE -->
+
+    <!-- ============== ABOUT PAGE ============= -->
     <div id="about-page" class="is-hidden">
       <div>
         <section class="hero is-small is-badger-red">
@@ -986,6 +980,7 @@
       </div>
     </div>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="footer has-background-light">
       <div class="content has-text-centered footer-links">
         <h3 class="title is-5 has-text-black">
@@ -1000,6 +995,34 @@
         <p>© 2025 Badger Birdies. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- ============== SCRIPTS =================== -->
+    <!-- Your SPA + modal JS -->
     <script src="js/main.js"></script>
+
+    <!-- Firebase SDKs (v8 just like class) -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <!-- Firebase config -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBxtcInLhQkg3H6j1-VhBGZUHlVyIrC4N0",
+        authDomain: "badger-birdies.firebaseapp.com",
+        projectId: "badger-birdies",
+        storageBucket: "badger-birdies.firebasestorage.app",
+        messagingSenderId: "648271884641",
+        appId: "1:648271884641:web:9eea01bf2e90e10e601520",
+        measurementId: "G-J55Q8HKZV2",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      let auth = firebase.auth();
+      let db = firebase.firestore();
+    </script>
+
+    <!-- Firebase logic (auth + Firestore features) -->
+    <script src="js/app.js"></script>
   </body>
 </html>

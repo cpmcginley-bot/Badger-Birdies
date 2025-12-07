@@ -1,4 +1,10 @@
+// main.js
+// Handles: navbar burger, Bulma modals, and single-page navigation
+
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================
+  // NAVBAR BURGER (mobile)
+  // =========================
   const burgers = Array.from(document.querySelectorAll(".navbar-burger"));
 
   burgers.forEach((burger) => {
@@ -11,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // SIGN IN/SIGN UP MODAL NAVBAR BUTTONS
-  // Functions to open and close a modal
+  // =========================
+  // BULMA MODALS (Sign In / Sign Up)
+  // =========================
+
   function openModal($el) {
     $el.classList.add("is-active");
   }
@@ -27,17 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add a click event on buttons to open a specific modal
+  // Open modal when clicking any trigger
   (document.querySelectorAll(".js-modal-trigger") || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
+    const modalId = $trigger.dataset.target;
+    const $target = document.getElementById(modalId);
 
-    $trigger.addEventListener("click", () => {
-      openModal($target);
+    $trigger.addEventListener("click", (e) => {
+      e.preventDefault(); // stay on the same SPA page
+      if ($target) openModal($target);
     });
   });
 
-  // Add a click event on various child elements to close the parent modal
+  // Close modal when clicking background, X, footer buttons
   (
     document.querySelectorAll(
       ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
@@ -46,24 +55,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const $target = $close.closest(".modal");
 
     $close.addEventListener("click", () => {
-      closeModal($target);
+      if ($target) closeModal($target);
     });
   });
 
-  // Add a keyboard event to close all modals
+  // Close all modals on ESC key
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeAllModals();
     }
   });
 
-  // function to load pages
-  // helper function
+  // =========================
+  // SIMPLE SPA PAGE NAVIGATION
+  // =========================
+
+  // local helper (separate from app.js on purpose)
   function r_e(id) {
     return document.querySelector(`#${id}`);
   }
 
-  // ids of all hidden page sections
+  // ids of all page sections
   const pages = [
     "index",
     "courses-page",
@@ -72,29 +84,62 @@ document.addEventListener("DOMContentLoaded", () => {
     "about-page",
   ];
 
-  // Function to load selected section into page-content
+  // show only the selected section
   function showPage(pageId) {
     pages.forEach((id) => {
       const el = r_e(id);
       if (!el) return;
 
       if (id === pageId) {
-        el.classList.remove("is-hidden"); // show this one
+        el.classList.remove("is-hidden");
       } else {
-        el.classList.add("is-hidden"); // hide others
+        el.classList.add("is-hidden");
       }
     });
   }
 
-  // event listeners for navbar buttons
-  r_e("home-btn").addEventListener("click", () => showPage("index"));
-  r_e("courses-btn").addEventListener("click", () => showPage("courses-page"));
-  r_e("leaderboards-btn").addEventListener("click", () =>
-    showPage("leaderboard-page")
-  );
-  r_e("play-btn").addEventListener("click", () => showPage("play-page"));
-  r_e("about-btn").addEventListener("click", () => showPage("about-page"));
+  // navbar buttons -> show appropriate section
+  const homeBtn = r_e("home-btn");
+  const coursesBtn = r_e("courses-btn");
+  const leaderboardsBtn = r_e("leaderboards-btn");
+  const playBtn = r_e("play-btn");
+  const aboutBtn = r_e("about-btn");
 
-  // start on Home
+  if (homeBtn) {
+    homeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage("index");
+    });
+  }
+
+  if (coursesBtn) {
+    coursesBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage("courses-page");
+    });
+  }
+
+  if (leaderboardsBtn) {
+    leaderboardsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage("leaderboard-page");
+    });
+  }
+
+  if (playBtn) {
+    playBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage("play-page");
+    });
+  }
+
+  if (aboutBtn) {
+    aboutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPage("about-page");
+    });
+  }
+
+  // default landing page
   showPage("index");
 });
