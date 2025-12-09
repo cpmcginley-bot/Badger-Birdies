@@ -309,19 +309,29 @@ if (postInfoForm) {
 
     let name = r_e("pi_name").value.trim();
     let email = r_e("pi_email").value.trim();
-    let handicap = r_e("pi_handicap").value.trim();
-    let message = r_e("pi_message").value.trim();
+    // handicap numericals + sign
+    let sign = r_e("pi_handicap_sign").value;
+    let handicapValueRaw = r_e("pi_handicap_value").value;
+    let handicapValue = Number(handicapValueRaw);
 
-    if (!name || !email || !handicap) {
+    if (!name || !email || !handicapValueRaw) {
       configure_message_bar("Please fill in name, email, and handicap.");
       return;
     }
+
+    // handicap numerical error
+    if (isNaN(handicapValue)) {
+      configure_message_bar("Handicap must be a number.");
+      return;
+    }
+
+    // display congregated string
+    let handicap = sign === "+" ? `+${handicapValue}` : `${handicapValue}`;
 
     let playerObj = {
       name,
       email,
       handicap,
-      message,
       user: auth.currentUser.email,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     };

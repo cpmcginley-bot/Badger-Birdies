@@ -69,7 +69,7 @@
             <!-- shown when signed OUT -->
             <div class="navbar-item signedout">
               <a
-                class="js-modal-trigger has-text-white"
+                class="button js-modal-trigger has-text-white"
                 href="#"
                 data-target="sign-in-modal"
               >
@@ -78,7 +78,7 @@
             </div>
             <div class="navbar-item signedout">
               <a
-                class="js-modal-trigger has-background-grey has-text-white"
+                class="button js-modal-trigger has-background-grey has-text-white"
                 href="#"
                 data-target="sign-up-modal"
               >
@@ -91,7 +91,9 @@
               <span id="user_email" class="has-text-white"></span>
             </div>
             <div class="navbar-item signedin is-hidden">
-              <a href="#" id="signoutbtn" class="has-text-white">Sign Out</a>
+              <a href="#" id="signoutbtn" class="button has-text-white"
+                >Sign Out</a
+              >
             </div>
           </div>
         </div>
@@ -102,7 +104,7 @@
     <!-- =============== MESSAGE BAR ============== -->
     <div
       id="message_bar"
-      class="p-3 has-background-warning has-text-black has-text-centered is-hidden"
+      class="p-3 has-background-warning-light has-text-black has-text-weight-bold has-text-centered is-hidden"
     ></div>
 
     <!-- ================= MODALS ================= -->
@@ -740,11 +742,23 @@
                               Course
                             </label>
                             <div class="control">
-                              <input
-                                class="input has-background-white has-text-black"
-                                type="text"
-                                id="score_course"
-                              />
+                              <div class="select is-fullwidth">
+                                <select id="score_course" required>
+                                  <option value="">Select a course</option>
+                                  <option>Odana Hills</option>
+                                  <option>Yahara Hills East</option>
+                                  <option>Yahara Hills West</option>
+                                  <option>The Glen Golf Park</option>
+                                  <option>University Ridge</option>
+                                  <option>Door Creek GC</option>
+                                  <option>Bridges GC</option>
+                                  <option>The Oaks</option>
+                                  <option>The Meadows</option>
+                                  <option>Pleasant View GC</option>
+                                  <option>Monona GC</option>
+                                  <option>Harvest Hill GC</option>
+                                </select>
+                              </div>
                             </div>
                           </div>
 
@@ -877,29 +891,37 @@
                       </div>
 
                       <div class="field">
-                        <label class="label has-text-black" for="pi_handicap">
+                        <label
+                          class="label has-text-black"
+                          for="pi_handicap_value"
+                        >
                           Handicap
                         </label>
-                        <div class="control">
-                          <input
-                            class="input has-background-white has-text-black"
-                            id="pi_handicap"
-                            type="text"
-                          />
+                        <div class="field has-addons">
+                          <!-- +/- Handicap Selector -->
+                          <p class="control">
+                            <span class="select">
+                              <select id="pi_handicap_sign">
+                                <option value="-">-</option>
+                                <option value="+">+</option>
+                              </select>
+                            </span>
+                          </p>
+                          <!-- numeric handicap value -->
+                          <p class="control is-expanded">
+                            <input
+                              class="input has-background-white has-text-black"
+                              id="pi_handicap_value"
+                              type="number"
+                              step="0.1"
+                              min="0"
+                              placeholder="e.g. 5.2"
+                            />
+                          </p>
                         </div>
-                      </div>
-
-                      <div class="field">
-                        <label class="label has-text-black" for="pi_message">
-                          Message
-                        </label>
-                        <div class="control">
-                          <textarea
-                            class="textarea has-background-white has-text-black"
-                            id="pi_message"
-                            rows="4"
-                          ></textarea>
-                        </div>
+                        <p class="help has-text-black">
+                          For a +2 handicap, choose "+" and enter 2.
+                        </p>
                       </div>
 
                       <div class="field">
@@ -1000,7 +1022,7 @@
     <!-- Your SPA + modal JS -->
     <script src="js/main.js"></script>
 
-    <!-- Firebase SDKs (v8 just like class) -->
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
