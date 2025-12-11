@@ -300,33 +300,50 @@ function load_players() {
 // =========================
 
 function search_courses(field, operator, value) {
+  const searchTerm = value.trim().toLowerCase();
+  const message = r_e("courses_search_message");
+
+  // Clear old message and highlights
+  if (message) {
+    message.textContent = "";
+  }
+  document
+    .querySelectorAll("#courses-page .course-highlight")
+    .forEach((card) => card.classList.remove("course-highlight"));
+
+  // If nothing typed, do nothing
+  if (!searchTerm) {
+    if (message) {
+      message.textContent = "Please type part of a course name.";
+    }
+    return;
+  }
+
+  // Get ALL courses, then filter client-side for partial matches
   db.collection("courses")
-    .where(field, operator, value)
     .get()
     .then((data) => {
       const docs = data.docs;
-      const message = r_e("courses_search_message");
 
-      // Clear old message and highlights
-      if (message) {
-        message.textContent = "";
-      }
-      document
-        .querySelectorAll("#courses-page .course-highlight")
-        .forEach((card) => card.classList.remove("course-highlight"));
+      // Filter Firestore docs whose title CONTAINS the search term
+      const matches = docs.filter((doc) => {
+        const d = doc.data();
+        if (!d.title) return false;
+        return d.title.trim().toLowerCase().includes(searchTerm);
+      });
 
-      // No matches in Firestore
-      if (docs.length === 0) {
+      if (matches.length === 0) {
         if (message) {
           message.textContent = "No matching course found.";
         }
         return;
       }
 
-      // expect a single match for title == value
-      const courseTitle = docs[0].data().title.trim().toLowerCase();
+      // Use the first match (or you could loop & handle multiple)
+      const bestMatch = matches[0];
+      const courseTitle = bestMatch.data().title.trim().toLowerCase();
 
-      // Find matching card on the Courses page
+      // Find matching card on the Courses page by FULL title
       const cards = document.querySelectorAll("#courses-page .card");
       let foundCard = null;
 
@@ -354,12 +371,11 @@ function search_courses(field, operator, value) {
       foundCard.classList.add("course-highlight");
 
       if (message) {
-        message.textContent = "Showing: " + docs[0].data().title;
+        message.textContent = "Showing: " + bestMatch.data().title;
       }
     })
     .catch((error) => {
       console.error(error);
-      const message = r_e("courses_search_message");
       if (message) {
         message.textContent = "Error searching courses.";
       }
