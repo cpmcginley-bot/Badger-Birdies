@@ -377,7 +377,7 @@ function search_courses(field, operator, value) {
     .catch((error) => {
       console.error(error);
       if (message) {
-        message.textContent = "Error searching courses.";
+        message.textContent = "Please Sign In to search Courses.";
       }
     });
 }
@@ -391,6 +391,7 @@ if (courseSearchBar && courseSearchButton) {
     const value = courseSearchBar.value.trim();
     if (value !== "") {
       search_courses("title", "==", value);
+      courseSearchBar.value = "";
     }
   });
 
@@ -399,6 +400,7 @@ if (courseSearchBar && courseSearchButton) {
       const value = courseSearchBar.value.trim();
       if (value !== "") {
         search_courses("title", "==", value);
+        courseSearchBar.value = "";
       }
     }
   });
