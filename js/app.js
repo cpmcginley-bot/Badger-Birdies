@@ -295,6 +295,99 @@ function load_players() {
     });
 }
 
+// =========================
+// COURSE SEARCH (Firebase + scroll to card)
+// =========================
+
+function search_courses(field, operator, value) {
+  db.collection("courses")
+    .where(field, operator, value)
+    .get()
+    .then((data) => {
+      const docs = data.docs;
+      const message = r_e("courses_search_message");
+
+      // Clear old message and highlights
+      if (message) {
+        message.textContent = "";
+      }
+      document
+        .querySelectorAll("#courses-page .course-highlight")
+        .forEach((card) => card.classList.remove("course-highlight"));
+
+      // No matches in Firestore
+      if (docs.length === 0) {
+        if (message) {
+          message.textContent = "No matching course found.";
+        }
+        return;
+      }
+
+      // expect a single match for title == value
+      const courseTitle = docs[0].data().title.trim().toLowerCase();
+
+      // Find matching card on the Courses page
+      const cards = document.querySelectorAll("#courses-page .card");
+      let foundCard = null;
+
+      cards.forEach((card) => {
+        const titleElement = card.querySelector(".card-content .title");
+        if (!titleElement) return;
+
+        const cardTitle = titleElement.textContent.trim().toLowerCase();
+
+        if (cardTitle === courseTitle) {
+          foundCard = card;
+        }
+      });
+
+      if (!foundCard) {
+        if (message) {
+          message.textContent =
+            "Course found in the database, but not on this page.";
+        }
+        return;
+      }
+
+      // Scroll to the card and highlight it
+      foundCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      foundCard.classList.add("course-highlight");
+
+      if (message) {
+        message.textContent = "Showing: " + docs[0].data().title;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      const message = r_e("courses_search_message");
+      if (message) {
+        message.textContent = "Error searching courses.";
+      }
+    });
+}
+
+// hook up search bar on Courses page
+const courseSearchBar = r_e("course_search_bar");
+const courseSearchButton = r_e("course_search_button");
+
+if (courseSearchBar && courseSearchButton) {
+  courseSearchButton.addEventListener("click", () => {
+    const value = courseSearchBar.value.trim();
+    if (value !== "") {
+      search_courses("title", "==", value);
+    }
+  });
+
+  courseSearchBar.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      const value = courseSearchBar.value.trim();
+      if (value !== "") {
+        search_courses("title", "==", value);
+      }
+    }
+  });
+}
+
 // POST YOUR INFO (CREATE)
 let postInfoForm = r_e("postinfo_form");
 

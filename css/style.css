@@ -7,3 +7,8 @@
   border-color: #c5050c;
   color: #fff;
 }
+
+.course-highlight {
+  box-shadow: 0 0 0 3px #c5050c;
+  transition: box-shadow 0.2s ease;
+}
